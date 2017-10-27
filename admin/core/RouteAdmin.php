@@ -17,10 +17,17 @@ class RouteAdmin
             '/admin/categories/' => 'CategoriesAdmin',
             '/admin/brands/' => 'BrandsAdmin',
             '/admin/features/' => 'FeaturesAdmin',
+            '/admin/orders/' => 'OrdersAdmin',
+            '/admin/users/' => 'UsersAdmin',
+            '/admin/pages/' => 'PagesAdmin',
+            '/admin/blog/' => 'BlogAdmin',
+            '/admin/comments/' => 'CommentsAdmin',
+            '/admin/stats/' => 'StatsAdmin',
+            '/admin/settings/' => 'SettingsAdmin',
         );
-        echo "URL: ".$uri['path'];
+        /*echo "URL: ".$uri['path'];
         echo "<br>";
-        echo "Controller: ".$controlers_dir.$uri_array[$uri['path']].'.php';
+        echo "Controller: ".$controlers_dir.$uri_array[$uri['path']].'.php';*/
 		if ($uri['path'])
 		{
 			
@@ -35,16 +42,16 @@ class RouteAdmin
 				}
 				else
                 {
-					//RouteAdmin::error404();
-                    echo "<br>";
-                    echo "errror_1";
+					RouteAdmin::error404();
+                    /*echo "<br>";
+                    echo "errror_1";*/
 				}
 			}
 			else
             {
-                echo "<br>";
-                echo "errror_2";
-                //RouteAdmin::error404();
+                /*echo "<br>";
+                echo "errror_2";*/
+                RouteAdmin::error404();
 			}
 		}
 	}
