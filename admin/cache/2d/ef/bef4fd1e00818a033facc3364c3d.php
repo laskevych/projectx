@@ -47,7 +47,7 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
                 <a class=\"nav-link\" href=\"http://projectx/\">Главная</a>
             </li>
             <li class=\"nav-item active\">
-                <a class=\"nav-link\" href=\"http://projectx/admin\">Админ</a>
+                <a class=\"nav-link\" href=\"http://projectx/admin\">Админ панель</a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link disabled\" href=\"#\">Каталог</a>
@@ -152,6 +152,6 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  144 => 98,  141 => 97,  136 => 4,  124 => 100,  122 => 97,  26 => 4,  21 => 1,  31 => 4,  28 => 3,);
+        return array (  144 => 98,  141 => 97,  136 => 4,  124 => 100,  122 => 97,  26 => 4,  21 => 1,  38 => 4,  35 => 3,  29 => 2,);
     }
 }

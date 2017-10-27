@@ -47,7 +47,7 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 \t\t\t\t<a class=\"nav-link\" href=\"http://projectx/\">Главная<span class=\"sr-only\">(current)</span></a>
 \t\t\t</li>
 \t\t\t<li class=\"nav-item\">
-\t\t\t\t<a class=\"nav-link\" href=\"http://projectx/admin\">Админ</a>
+\t\t\t\t<a class=\"nav-link\" href=\"http://projectx/admin\">Админ панель</a>
 \t\t\t</li>
 \t\t\t<li class=\"nav-item\">
 \t\t\t\t<a class=\"nav-link disabled\" href=\"#\">Каталог</a>

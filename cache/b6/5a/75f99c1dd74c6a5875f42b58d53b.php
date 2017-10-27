@@ -10,6 +10,7 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
         $this->parent = $this->env->loadTemplate("index.html");
 
         $this->blocks = array(
+            'title' => array($this, 'block_title'),
             'content' => array($this, 'block_content'),
         );
     }
@@ -22,6 +23,12 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 2
+    public function block_title($context, array $blocks = array())
+    {
+        echo "Project X CMS(demo)";
     }
 
     // line 3
@@ -115,6 +122,6 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  101 => 55,  92 => 52,  88 => 51,  84 => 50,  81 => 49,  77 => 48,  31 => 4,  28 => 3,);
+        return array (  108 => 55,  99 => 52,  95 => 51,  91 => 50,  88 => 49,  84 => 48,  38 => 4,  35 => 3,  29 => 2,);
     }
 }

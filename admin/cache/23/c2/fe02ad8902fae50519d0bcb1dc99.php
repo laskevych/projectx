@@ -10,6 +10,7 @@ class __TwigTemplate_23c2fe02ad8902fae50519d0bcb1dc99 extends Twig_Template
         $this->parent = $this->env->loadTemplate("index.html");
 
         $this->blocks = array(
+            'title' => array($this, 'block_title'),
             'content' => array($this, 'block_content'),
         );
     }
@@ -22,6 +23,12 @@ class __TwigTemplate_23c2fe02ad8902fae50519d0bcb1dc99 extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 2
+    public function block_title($context, array $blocks = array())
+    {
+        echo "Админ панель";
     }
 
     // line 3
@@ -68,6 +75,6 @@ class __TwigTemplate_23c2fe02ad8902fae50519d0bcb1dc99 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,);
+        return array (  38 => 4,  35 => 3,  29 => 2,);
     }
 }
