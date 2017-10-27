@@ -49,7 +49,7 @@ class __TwigTemplate_23c2fe02ad8902fae50519d0bcb1dc99 extends Twig_Template
         <div class=\"card-block\">
             <h4 class=\"card-title\">Список товаров</h4>
             <p class=\"card-text\">Вы можете добавлять свои товары</p>
-            <a href=\"#\" class=\"btn btn-primary\">Добавить</a>
+            <a href=\"#\" class=\"btn btn-primary disabled\">Добавить</a>
         </div>
     </div>
 </div>

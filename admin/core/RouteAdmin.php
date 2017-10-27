@@ -5,7 +5,6 @@ class RouteAdmin
 	public static function run()
     {
 
-        //$models_dir = '';
         $controlers_dir = '../admin/controllers/';
 
         $uri = parse_url($_SERVER['REQUEST_URI']);
@@ -16,9 +15,9 @@ class RouteAdmin
             '/admin/' => 'Admin',
             '/admin/products/' => 'ProductsAdmin',
         );
-        /*echo "URI: ".$uri['path'];
+        echo "URL: ".$uri['path'];
         echo "<br>";
-        echo "Controller: ".$controlers_dir.$uri_array[$uri['path']].'.php';*/
+        echo "Controller: ".$controlers_dir.$uri_array[$uri['path']].'.php';
 		if ($uri['path'])
 		{
 			
@@ -33,16 +32,16 @@ class RouteAdmin
 				}
 				else
                 {
-					RouteAdmin::error404();
-                    /*echo "<br>";
-                    echo "errror_1";*/
+					//RouteAdmin::error404();
+                    echo "<br>";
+                    echo "errror_1";
 				}
 			}
 			else
             {
-                /*echo "<br>";
-                echo "errror_2";*/
-                RouteAdmin::error404();
+                echo "<br>";
+                echo "errror_2";
+                //RouteAdmin::error404();
 			}
 		}
 	}

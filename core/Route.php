@@ -42,6 +42,6 @@ class Route
 	public static function error404()
 	{
 	    echo "<br>";
-	    echo 'Ошибка';
+	    echo 'Ошиб1ка';
 	}
 }
