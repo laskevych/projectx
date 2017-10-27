@@ -14,6 +14,9 @@ class RouteAdmin
             //'/catalog' => 'Catalog',
             '/admin/' => 'Admin',
             '/admin/products/' => 'ProductsAdmin',
+            '/admin/categories/' => 'CategoriesAdmin',
+            '/admin/brands/' => 'BrandsAdmin',
+            '/admin/features/' => 'FeaturesAdmin',
         );
         echo "URL: ".$uri['path'];
         echo "<br>";

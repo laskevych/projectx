@@ -33,16 +33,16 @@ class __TwigTemplate_23c2fe02ad8902fae50519d0bcb1dc99 extends Twig_Template
         <div class=\"card-header\">
             <ul class=\"nav nav-tabs card-header-tabs\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link active\" href=\"#\">Товары</a>
+                    <a class=\"nav-link active\" href=\"http://projectx/admin/products/\">Товары</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link disabled\" href=\"#\">Категории</a>
+                    <a class=\"nav-link\" href=\"http://projectx/admin/categories/\">Категории</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link disabled\" href=\"#\">Бренды</a>
+                    <a class=\"nav-link\" href=\"http://projectx/admin/brands/\">Бренды</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link disabled\" href=\"#\">Свойства</a>
+                    <a class=\"nav-link\" href=\"http://projectx/admin/features/\">Свойства</a>
                 </li>
             </ul>
         </div>

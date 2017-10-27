@@ -1,25 +1,29 @@
-{% extends "index_admin.html" %}
+{% extends "index.html" %}
 
 {% block content %}
-<div class="div col-12">
-    <p class="display-4">Книги из MySQL</p>
-</div>
-<div class="col-12" id="books">
-    <table class="table">
-        <thead class="thead-inverse">
-        <th>#</th>
-        <th>Title</th>
-        <th>Date</th>
-        </thead>
-        {% for book in books %}
-        <tbody>
-        <!--<tr scope="row">{{book.number}}</tr >-->
-        <td>{{book.number}}</td>
-        <td>{{book.title}}</td>
-        <td>{{book.date}}</td>
-        </tbody>
-        {% endfor %}
-    </table>
-</div>
+<div class="col-12">
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="http://projectx/admin/products/">Товары</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://projectx/admin/categories/">Категории</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://projectx/admin/brands/">Бренды</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://projectx/admin/features/">Свойства</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-block">
+            <h4 class="card-title">Список товаров</h4>
+            <p class="card-text">Вы можете добавлять свои товары</p>
+            <a href="#" class="btn btn-primary disabled">Добавить</a>
+        </div>
+    </div>
 </div>
 {% endblock %}
