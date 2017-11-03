@@ -5,16 +5,16 @@ class RouteAdmin
 	public static function run()
     {
 
-        $controlers_dir = '../admin/controllers/';
+        $controlers_dir = 'controllers/';
 
         $uri = parse_url($_SERVER['REQUEST_URI']);
 
         $uri_array = array(
-            //'/' => 'Main',
-            //'/catalog' => 'Catalog',
             '/admin/' => 'Admin',
             '/admin/products/' => 'ProductsAdmin',
+            '/admin/product/' => 'ProductAdmin',
             '/admin/categories/' => 'CategoriesAdmin',
+            '/admin/category/' => 'CategoryAdmin',
             '/admin/brands/' => 'BrandsAdmin',
             '/admin/features/' => 'FeaturesAdmin',
             '/admin/orders/' => 'OrdersAdmin',
@@ -54,6 +54,11 @@ class RouteAdmin
                 RouteAdmin::error404();
 			}
 		}
+		//todo: загрузка и предосмотр картинок
+		/*if ($uri['path'] !== '/admin/product/')
+        {
+            session_destroy($_SESSION['upload']['images']);
+        }*/
 	}
 	public static function error404()
 	{

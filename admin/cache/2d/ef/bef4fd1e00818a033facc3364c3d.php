@@ -116,7 +116,7 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
                 </a>
             </div>
     </div>
-    <div id=\"content\">
+    <div class=\"col-12\">
         ";
         // line 97
         $this->displayBlock('content', $context, $blocks);
@@ -152,6 +152,6 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  144 => 98,  141 => 97,  136 => 4,  124 => 100,  122 => 97,  26 => 4,  21 => 1,  38 => 4,  35 => 3,  29 => 2,);
+        return array (  144 => 98,  141 => 97,  136 => 4,  124 => 100,  122 => 97,  26 => 4,  21 => 1,  65 => 29,  38 => 4,  35 => 3,  29 => 2,);
     }
 }

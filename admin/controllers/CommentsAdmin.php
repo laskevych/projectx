@@ -1,5 +1,4 @@
 <?php
-require_once '../models/Database.php';
 
 class CommentsAdmin extends CoreAdmin
 {

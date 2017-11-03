@@ -17,12 +17,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="http://projectx/admin/features/">Свойства</a>
                 </li>
+                <li class="nav-item">
+                    <a href="/admin/category/" class="btn btn-outline-success">Добавить</a>
+                </li>
             </ul>
         </div>
-        <div class="card-block">
-            <h4 class="card-title">Список категорий</h4>
-            <p class="card-text">Вы можете добавлять свои категории</p>
-            <a href="#" class="btn btn-primary disabled">Добавить</a>
+        <div class="card-block text-left">
+            <h4 class="card-title display-7">Список категорий</h4>
+            <ol>
+                {% for category in categories %}
+                <li>{{ category.name }}</li>
+                {% if category.subcategories %}
+                <ol>
+                {% for subcategory in category.subcategories %}
+                <li>{{ subcategory.name }}</li>
+                {% endfor %}
+                    </ol>
+                {% endif %}
+                {% endfor %}
+            </ol>
         </div>
     </div>
 </div>

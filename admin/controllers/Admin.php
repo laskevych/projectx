@@ -1,13 +1,16 @@
 <?php
-require_once '../models/Database.php';
 class Admin extends CoreAdmin
 {
     public function fetch()
     {
-        $obj = new Database();
-        $q = "SELECT * FROM books";
-        $obj->query($q);
-        $res = $obj->results();
-        return $this->view->render('admin.html', array('books' => $res));
+        $products = new Products();
+        $products_catalog = $products->getProducts();
+        //print_r($products_catalog);
+
+        $arr = array(
+            'name' => 'Products',
+            'products' => $products_catalog,
+        );
+        return $this->view->render('admin_products.html', $arr);
     }
 }

@@ -51,10 +51,17 @@ class __TwigTemplate_23c2fe02ad8902fae50519d0bcb1dc99 extends Twig_Template
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"http://projectx/admin/features/\">Свойства</a>
                 </li>
+                <li class=\"nav-item\">
+                    <a href=\"#\" class=\"btn btn-primary\">Добавить</a>
+                </li>
             </ul>
         </div>
         <div class=\"card-block\">
             <h4 class=\"card-title\">Список товаров</h4>
+            <p class=\"card-text\">Вы можете добавлять свои товары</p>
+            <p class=\"card-text\">Вы можете добавлять свои товары</p>
+            <p class=\"card-text\">Вы можете добавлять свои товары</p>
+            <p class=\"card-text\">Вы можете добавлять свои товары</p>
             <p class=\"card-text\">Вы можете добавлять свои товары</p>
             <a href=\"#\" class=\"btn btn-primary disabled\">Добавить</a>
         </div>

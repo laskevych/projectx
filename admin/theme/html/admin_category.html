@@ -1,0 +1,104 @@
+{% extends "index.html" %}
+{% block title %}Добавить категорию{% endblock %}
+{% block content %}
+<!--<div class="col-12">-->
+<div class="card text-center">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="http://projectx/admin/products/">Товары</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://projectx/admin/categories/">Категории</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://projectx/admin/brands/">Бренды</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://projectx/admin/features/">Свойства</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="http://projectx/admin/category/">Добавление категории</a>
+            </li>
+        </ul>
+    </div>
+    <!--<div class="w-100">
+        <p class="display-4">Добавление товара</p>
+    </div>-->
+    <form method="post" enctype="multipart/form-data">
+        <!--<input type="hidden" name="id" value="{{ product.id }}">-->
+        <div class="row">
+            <div class="card-block col-7 text-left">
+                <!--Название-->
+                <div class="form-group">
+                    <label for="category-name">Название</label>
+                    <input class="form-control" type="text" name="name" id="category-name">
+                </div>
+                <!--Ссылка и Видимость-->
+                <div class="form-inline text-center">
+                    <label for="category-url" class="col-2">Ссылка</label>
+                    <!--<span class="badge badge-default col-2">Ссылка</span>-->
+                    <input class="form-control form-control-sm col-4" type="text" name="url" id="category-url">
+                    <label for="category-visible" class="col-2">Видимость</label>
+                    <div class="btn-group col-4" data-toggle="buttons" id="category-visible">
+                        <label class="btn btn-outline-primary btn-sm">
+                            <input type="radio" name="visible" autocomplete="off" value="1">On
+                        </label>
+                        <label class="btn btn-outline-primary active btn-sm">
+                            <input type="radio" name="visible" autocomplete="off" value="0">Off
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!--Выбор подкатегории-->
+            <div class="card-block col-5">
+                <div class="custom-controls-stacked">
+                    <label>Подкатегории</label>
+                    <label class="custom-control custom-radio">
+                        <input class="custom-control-input" type="radio" name="parent_id" value="0" autocomplete="off" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">Главное дерево</span>
+                    </label>
+                    {% for category in categories %}
+                    <label class="custom-control custom-radio">
+                        <input class="custom-control-input" type="radio" name="parent_id" value="{{ category.id }}" autocomplete="off">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">{{ category.name }}</span>
+                    </label>
+                    {% if category.subcategories %}
+                    {% for subcategory in category.subcategories %}
+                    <label class="custom-control custom-radio">
+                        <input class="custom-control-input" type="radio" name="parent_id" value="{{ subcategory.id }}" autocomplete="off">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">{{ subcategory.name }}</span>
+                    </label>
+                    {% endfor %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="card-block col-12">
+                <!--Загрузка картинки-->
+                <div class="form-group">
+                    <label for="category-image">Изображение категории</label>
+                    <!-- <input type="hidden" name="MAX_FILE_SIZE" value="2000000">-->
+                    <input type="file" class="form-control-file" name="image" id="category-image" aria-describedby="fileHelp">
+                    <small id="fileHelp" class="form-text text-muted">Загружайте изображение в формате .png и .jpg. Размер до 2 МБ</small>
+                </div>
+            </div>
+            <div class="card-block col-12">
+                <!--Описание категории-->
+                <div class="form-group">
+                    <label for="category-textArea">Описание категории</label>
+                    <textarea class="form-control" id="category-textArea" name="description" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="card-block col-12">
+                <input type="submit" class="btn btn-success col-12" value="Добавить">
+            </div>
+        </div> <!--ROW-->
+
+    </form>
+</div>
+<!--</div>-->
+{% endblock %}

@@ -17,12 +17,40 @@
                 <li class="nav-item">
                     <a class="nav-link" href="http://projectx/admin/features/">Свойства</a>
                 </li>
+                <li class="nav-item">
+                    <a href="/admin/product/" class="btn btn-outline-success">Добавить</a>
+                </li>
             </ul>
         </div>
-        <div class="card-block">
-            <h4 class="card-title">Список товаров</h4>
-            <p class="card-text">Вы можете добавлять свои товары</p>
-            <a href="#" class="btn btn-primary disabled">Добавить</a>
+        <div class="card-block text-left">
+            <!--<h4 class="card-title display-7">Список товаров</h4>-->
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Фото</th>
+                    <th>Название</th>
+                    <th>Цена</th>
+                    <th>Кол-во</th>
+                    <th>Видимость</th>
+                    <th>Действия</th>
+                    <!--<th>Username</th>-->
+                </tr>
+                </thead>
+                {% for product in products %}
+                <tbody>
+                <tr class="text-align-center">
+                    <th>{{ product.id }}</th>
+                    <td><img src="../../../upload/{{ product.image }}" alt="" style="width: 10%" class="img-thumbnail"></td>
+                    <td><a href="#">{{ product.name }}</a></td>
+                    <td>{{ product.price }} грн.</td>
+                    <td>0 шт</td>
+                    <td>{{ product.visible }}</td>
+                    <td>None</td>
+                </tr>
+                </tbody>
+                {% endfor %}
+            </table>
         </div>
     </div>
 </div>

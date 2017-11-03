@@ -4,10 +4,6 @@ class Database
     /**************************************
      * Работа с БД
      **************************************/
-    private $db_login = 'root';
-    private $db_pass = '';
-    private $db_host = 'localhost';
-    private $db_name = 'cms';
     private $mysqli;
     private $res;
 
@@ -24,7 +20,7 @@ class Database
         }
         else
         {
-            $this->mysqli = new mysqli($this->db_host,$this->db_login,$this->db_pass,$this->db_name);
+            $this->mysqli = new mysqli(DB_HOST,DB_LOGIN,DB_PASS,DB_NAME);
         }
     }
 
@@ -53,5 +49,9 @@ class Database
     public function result() {
 
         return $this->res->fetch_assoc();
+    }
+    public function resId()
+    {
+        return $this->mysqli->insert_id;
     }
 }
