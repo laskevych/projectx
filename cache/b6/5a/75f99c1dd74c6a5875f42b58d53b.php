@@ -80,39 +80,55 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
             // line 43
             echo "\t<div class=\"card col-3\">
-\t\t<img src=\"../../upload/";
+\t\t";
             // line 44
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "image"), "html", null, true);
-            echo "\" alt=\"не судьба\" class=\"card-img-top\" style=\"width: 100%\">
-\t\t<div class=\"card-block\">
+            if (($this->getAttribute((isset($context["product"]) ? $context["product"] : null), "image") == null)) {
+                // line 45
+                echo "\t\t";
+                // line 46
+                echo "\t\t<img src=\"../../upload/image_stock.jpg\" alt=\"не судьба\" class=\"card-img-top\" style=\"width: 100%\">
+\t\t";
+            } else {
+                // line 48
+                echo "\t\t<img src=\"../../upload/";
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "image"), "html", null, true);
+                echo "\" alt=\"Image not found\" class=\"card-img-top\" style=\"width: 100%\">
+\t\t";
+            }
+            // line 50
+            echo "\t\t<div class=\"card-block\">
 \t\t\t<h4 class=\"card-title\">";
-            // line 46
+            // line 51
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "name"), "html", null, true);
             echo "</h4>
 \t\t\t<p class=\"card-text\">";
-            // line 47
+            // line 52
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "description"), "html", null, true);
             echo "</p>
 \t\t</div>
 \t\t<ul class=\"list-group list-group-flush\">
 \t\t\t<li class=\"list-group-item\">";
-            // line 50
+            // line 55
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "price"), "html", null, true);
             echo " грн.</li>
 \t\t\t";
-            // line 51
+            // line 56
             if (($this->getAttribute((isset($context["product"]) ? $context["product"] : null), "visible") == 1)) {
-                // line 52
+                // line 57
                 echo "\t\t\t<li class=\"list-group-item\">Видимость: <span class=\"badge badge-default\"> On</span></li>
 \t\t\t";
             } else {
-                // line 54
+                // line 59
                 echo "\t\t\t<li class=\"list-group-item\">Видимость: <span class=\"badge badge-default\"> Off</span></li>
 \t\t\t";
             }
-            // line 56
+            // line 61
             echo "\t\t\t<li class=\"list-group-item\">ID: ";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "id"), "html", null, true);
+            echo "</li>
+\t\t\t<li class=\"list-group-item\">URL: ";
+            // line 62
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "url"), "html", null, true);
             echo "</li>
 \t\t</ul>
 \t\t<div class=\"card-block\">
@@ -124,7 +140,7 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 63
+        // line 69
         echo "</div>
 <!--<div class=\"card-block text-left\">
 \t&lt;!&ndash;<h4 class=\"card-title display-7\">Список товаров</h4>&ndash;&gt;
@@ -142,32 +158,32 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
 \t\t</tr>
 \t\t</thead>
 \t\t";
-        // line 79
+        // line 85
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["products"]) ? $context["products"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 80
+            // line 86
             echo "\t\t<tbody>
 \t\t<tr>
 \t\t\t<th>";
-            // line 82
+            // line 88
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "id"), "html", null, true);
             echo "</th>
 \t\t\t<td>";
-            // line 83
+            // line 89
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "image"), "html", null, true);
             echo "</td>
 \t\t\t<td>";
-            // line 84
+            // line 90
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "name"), "html", null, true);
             echo "</td>
 \t\t\t<td>";
-            // line 85
+            // line 91
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "price"), "html", null, true);
             echo " грн.</td>
 \t\t\t<td> 0 шт</td>
 \t\t\t<td>";
-            // line 87
+            // line 93
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "visible"), "html", null, true);
             echo "</td>
 \t\t\t<td>None</td>
@@ -178,7 +194,7 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 92
+        // line 98
         echo "\t</table>
 </div>-->
 ";
@@ -196,6 +212,6 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  182 => 92,  171 => 87,  166 => 85,  162 => 84,  158 => 83,  154 => 82,  150 => 80,  146 => 79,  128 => 63,  114 => 56,  110 => 54,  106 => 52,  104 => 51,  100 => 50,  94 => 47,  90 => 46,  85 => 44,  82 => 43,  78 => 42,  38 => 4,  35 => 3,  29 => 2,);
+        return array (  198 => 98,  187 => 93,  182 => 91,  178 => 90,  174 => 89,  170 => 88,  166 => 86,  162 => 85,  144 => 69,  131 => 62,  126 => 61,  122 => 59,  118 => 57,  116 => 56,  112 => 55,  106 => 52,  102 => 51,  99 => 50,  93 => 48,  89 => 46,  87 => 45,  85 => 44,  82 => 43,  78 => 42,  38 => 4,  35 => 3,  29 => 2,);
     }
 }

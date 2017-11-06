@@ -41,7 +41,12 @@
 <div class="row">
 	{% for product in products %}
 	<div class="card col-3">
-		<img src="../../upload/{{ product.image }}" alt="не судьба" class="card-img-top" style="width: 100%">
+		{% if product.image == null %}
+		{# если человек не загрузил картинку вставляем заглушку #}
+		<img src="../../upload/image_stock.jpg" alt="не судьба" class="card-img-top" style="width: 100%">
+		{% else %}
+		<img src="../../upload/{{ product.image }}" alt="Image not found" class="card-img-top" style="width: 100%">
+		{% endif %}
 		<div class="card-block">
 			<h4 class="card-title">{{ product.name }}</h4>
 			<p class="card-text">{{ product.description }}</p>
@@ -54,6 +59,7 @@
 			<li class="list-group-item">Видимость: <span class="badge badge-default"> Off</span></li>
 			{% endif %}
 			<li class="list-group-item">ID: {{product.id}}</li>
+			<li class="list-group-item">URL: {{product.url}}</li>
 		</ul>
 		<div class="card-block">
 			<a href="#" class="btn btn-primary">Купить</a>

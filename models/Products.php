@@ -16,28 +16,44 @@ class Products extends Database
 
             $query = "INSERT INTO products ($column_sql) VALUES ($var_sql)";
             //echo $query;
-            echo "<br>";
+            //echo "<br>";
             $this->query($query);
             return $this->resId();
         }
     }
 
-    public function getProduct()
+    public function getProduct($id)
     {
         if (empty($id)) {
             return false;
         } else {
-            $query = "SELECT id,name,description,url,visible,image FROM products WHERE id = $id LIMIT 1 ";
+            $query = "SELECT id,name,description,url,visible,image,price FROM products WHERE id = $id LIMIT 1 ";
             $this->query($query);
             return $this->result();
         }
     }
 
-    public function getProducts()
+    //Отображение товаров. Три режима отображения.
+    public function getProducts($visible)
     {
-        $query = "SELECT id,name, description, url, visible,image,price FROM products";
-        $this->query($query);
-        return $this->results();
+        if ($visible == 'active')
+        {
+            $query = "SELECT id,name, description, url, visible,image,price FROM products WHERE visible = 1";
+            $this->query($query);
+            return $this->results();
+        }
+        elseif ($visible == 'disabled')
+        {
+            $query = "SELECT id,name, description, url, visible,image,price FROM products WHERE visible = 0";
+            $this->query($query);
+            return $this->results();
+        }
+        else
+        {
+            $query = "SELECT id,name, description, url, visible,image,price FROM products";
+            $this->query($query);
+            return $this->results();
+        }
     }
 
     public function updateProduct($id, $product)
@@ -55,7 +71,16 @@ class Products extends Database
         }
     }
 
-    public function deleteProduct()
+    public function deleteProduct($id)
     {
+        if (empty($id))
+        {
+            return false;
+        }
+        else
+        {
+            $query = "DELETE FROM products WHERE products.id = '".$id."'";
+            $this->query($query);
+        }
     }
 }

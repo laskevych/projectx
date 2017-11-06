@@ -15,14 +15,8 @@ class RouteAdmin
             '/admin/product/' => 'ProductAdmin',
             '/admin/categories/' => 'CategoriesAdmin',
             '/admin/category/' => 'CategoryAdmin',
-            '/admin/brands/' => 'BrandsAdmin',
-            '/admin/features/' => 'FeaturesAdmin',
             '/admin/orders/' => 'OrdersAdmin',
-            '/admin/users/' => 'UsersAdmin',
             '/admin/pages/' => 'PagesAdmin',
-            '/admin/blog/' => 'BlogAdmin',
-            '/admin/comments/' => 'CommentsAdmin',
-            '/admin/stats/' => 'StatsAdmin',
             '/admin/settings/' => 'SettingsAdmin',
         );
         /*echo "URL: ".$uri['path'];

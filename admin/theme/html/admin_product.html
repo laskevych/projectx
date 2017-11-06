@@ -12,19 +12,16 @@
                     <a class="nav-link" href="http://projectx/admin/categories/">Категории</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://projectx/admin/brands/">Бренды</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://projectx/admin/features/">Свойства</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="http://projectx/admin/product/">Добавление товара</a>
+                    <a class="nav-link active" href="http://projectx/admin/product/">
+                        {% if product.id %}
+                        Редактирование товара
+                        {% else %}
+                        Добавление товара
+                        {% endif %}
+                    </a>
                 </li>
             </ul>
         </div>
-        <!--<div class="w-100">
-            <p class="display-4">Добавление товара</p>
-        </div>-->
         <form method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="{{ product.id }}">
             <div class="row">
@@ -32,29 +29,41 @@
                     <!--Название-->
                     <div class="form-group">
                         <label for="product-name">Название</label>
-                        <input class="form-control" type="text" name="name" id="product-name">
+                        <input class="form-control" type="text" name="name" id="product-name" value="{{ product.name }}">
                     </div>
                     <!--Ссылка и Цена-->
                     <div class="form-inline text-center">
                         <label for="product-url" class="col-1">Ссылка</label>
-                        <!--<span class="badge badge-default col-2">Ссылка</span>-->
-                        <input class="form-control form-control-sm col-9" type="text" name="url" id="product-url">
+                        <input class="form-control form-control-sm col-9" type="text" name="url" id="product-url" value="{{ product.url }}">
                         <label for="product-price" class="col-1">Цена</label>
-                        <input class="form-control form-control-sm col-sm-1" type="text" name="price" id="product-price">
+                        <input class="form-control form-control-sm col-sm-1" type="text" name="price" id="product-price" value="{{ product.price }}">
                     </div>
                 </div>
                 <div class="card-block col-3 align-self-center">
                     <!--Видимость. Switch-->
                     <p>Видимость</p>
                     <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-outline-primary btn-sm">
+                        <!--Проверка и опеределения активного включателя-->
+                        {% if product.id %}
+                        {% if product.visible == 1 %}
+                        {% set labelOn = 'active' %}
+                        {% set labelOff = '' %}
+                        {% else %}
+                        {% set labelOn = '' %}
+                        {% set labelOff = 'active' %}
+                        {% endif %}
+                        {% else %}
+                        {% set labelOn = '' %}
+                        {% set labelOff = 'active' %}
+                        {% endif %}
+                        <label class="btn btn-outline-primary btn-sm {{ labelOn }}">
                             <input type="radio" name="visible" autocomplete="off" value="1">On
                         </label>
-                        <label class="btn btn-outline-primary active btn-sm">
+                        <label class="btn btn-outline-primary btn-sm {{ labelOff }}">
                             <input type="radio" name="visible" autocomplete="off" value="0">Off
                         </label>
                     </div>
-                    <!--Хит продаж. Switch-->
+                    <!--Хит продаж(пустышка). Switch-->
                     <p>Хит продаж</p>
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-outline-primary btn-sm">
@@ -69,6 +78,7 @@
                     <!--Загрузка картинки-->
                     <div class="form-group">
                         <label for="exampleInputFile">Изображение товара</label>
+                        <!--Размер изображения.-->
                         <!-- <input type="hidden" name="MAX_FILE_SIZE" value="2000000">-->
                         <input type="file" class="form-control-file" name="image" id="exampleInputFile" aria-describedby="fileHelp">
                         <small id="fileHelp" class="form-text text-muted">Загружайте изображение в формате .png и .jpg. Размер до 2 МБ</small>
@@ -78,15 +88,17 @@
                     <!--Описание товара-->
                     <div class="form-group">
                         <label for="exampleTextarea">Описание товара</label>
-                        <textarea class="form-control" id="exampleTextarea" name="description" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleTextarea" name="description" rows="3">{{ product.description }}</textarea>
                     </div>
                 </div>
                 <div class="card-block col-12">
-                    <input type="submit" class="btn btn-success col-12" value="Добавить">
+                    {% set btn = 'Добавить' %}
+                    {% if product.id %}
+                    {% set btn = 'Сохранить' %}
+                    {% endif %}
+                    <input type="submit" class="btn btn-success col-12" value="{{ btn }}">
                 </div>
-            </div> <!--ROW-->
-
+            </div>
         </form>
     </div>
-<!--</div>-->
 {% endblock %}

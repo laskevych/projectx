@@ -26,19 +26,27 @@ class ProductAdmin extends CoreAdmin
             if ($request->post('id', 'integer'))
             {
                 //Обновление товара
-                $id = $products->updateProdutc($request->post('id', 'integer'));
+                $id = $products->updateProduct($request->post('id', 'integer'), $product);
             }
             else
             {
                 //Добавление товара
                 $id = $products->addProduct($product);
-                //print_r($product->id);
             }
+            $product = $products->getProduct($id);
+            //print_r($product);
         }
+        //todo: вывод категорий
+        /*$categories = new Categories();
+        $category = self::makeTree($categories->getCategories());
+        $arr = array(
+            'categories' => $category,
+        );*/
 
         $arr = array(
             'product' => $product,
         );
+        print_r($arr);
         return $this->view->render('admin_product.html', $arr);
     }
 }

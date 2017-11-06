@@ -40,30 +40,26 @@ class __TwigTemplate_23c2fe02ad8902fae50519d0bcb1dc99 extends Twig_Template
         <div class=\"card-header\">
             <ul class=\"nav nav-tabs card-header-tabs\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link active\" href=\"http://projectx/admin/products/\">Товары</a>
+                    <a class=\"nav-link active\" href=\"#\">Admin</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"http://projectx/admin/categories/\">Категории</a>
+                    <a class=\"nav-link\" href=\"#\">Admin</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"http://projectx/admin/brands/\">Бренды</a>
+                    <a class=\"nav-link\" href=\"#\">Admin</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"http://projectx/admin/features/\">Свойства</a>
+                    <a class=\"nav-link\" href=\"#\">Admin</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a href=\"#\" class=\"btn btn-primary\">Добавить</a>
+                    <a href=\"#\" class=\"btn btn-primary disabled\">Admin</a>
                 </li>
             </ul>
         </div>
         <div class=\"card-block\">
-            <h4 class=\"card-title\">Список товаров</h4>
-            <p class=\"card-text\">Вы можете добавлять свои товары</p>
-            <p class=\"card-text\">Вы можете добавлять свои товары</p>
-            <p class=\"card-text\">Вы можете добавлять свои товары</p>
-            <p class=\"card-text\">Вы можете добавлять свои товары</p>
-            <p class=\"card-text\">Вы можете добавлять свои товары</p>
-            <a href=\"#\" class=\"btn btn-primary disabled\">Добавить</a>
+            <h4 class=\"card-title\">Admin</h4>
+            <p class=\"card-text\">Admin Admin Admin Admin Admin Admin</p>
+            <a href=\"#\" class=\"btn btn-primary disabled\">Admin</a>
         </div>
     </div>
 </div>

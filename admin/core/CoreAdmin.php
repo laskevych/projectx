@@ -50,16 +50,16 @@ class CoreAdmin
             $res = move_uploaded_file($file,'../upload/'.$name);
             if ($res)
             {
-                echo 'img upload';
+                //echo 'img upload';
             }
             else
             {
-                echo 'img DONT UPLOAD';
+                //echo 'img DONT UPLOAD';
             }
         }
         else
         {
-            'img wrong format';
+            echo 'img wrong format';
         }
     }
     static public function makeTree($categories, $parent_id = 0)
@@ -83,20 +83,21 @@ class CoreAdmin
         }
         return $results;
     }
-}
-
-/*class CoreAdmin
-{
-    public $view = '';
-    public function __construct()
+    //не знаю как вставить в Twig
+    static public function viewTree($categories)
     {
-        require_once '../lib/Twig/Autoloader.php';
-        Twig_Autoloader::register();
-        $loader = new Twig_Loader_Filesystem('theme/html');
-        $twig = new Twig_Environment($loader, array(
-            'cache'       => 'cache',
-            'auto_reload' => true
-        ));
-        $this->view = $twig;
+        if ($categories)
+        {
+            echo "<ol>";
+            foreach ($categories as $category)
+            {
+                echo "<label class=\"btn btn-primary\"><input type=\"radio\"><li>".$category['name']."</li></label>";
+                if (isset($category['subcategories']))
+                {
+                    viewCategories($category['subcategories']);
+                }
+            }
+            echo "</ol>";
+        }
     }
-}*/
+}

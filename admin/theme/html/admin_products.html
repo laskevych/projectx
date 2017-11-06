@@ -12,12 +12,6 @@
                     <a class="nav-link" href="http://projectx/admin/categories/">Категории</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://projectx/admin/brands/">Бренды</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://projectx/admin/features/">Свойства</a>
-                </li>
-                <li class="nav-item">
                     <a href="/admin/product/" class="btn btn-outline-success">Добавить</a>
                 </li>
             </ul>
@@ -32,21 +26,43 @@
                     <th>Название</th>
                     <th>Цена</th>
                     <th>Кол-во</th>
-                    <th>Видимость</th>
-                    <th>Действия</th>
+                    <th class="text-center">Видимость</th>
+                    <th class="text-center">Действия</th>
                     <!--<th>Username</th>-->
                 </tr>
                 </thead>
                 {% for product in products %}
                 <tbody>
-                <tr class="text-align-center">
+                <tr>
                     <th>{{ product.id }}</th>
-                    <td><img src="../../../upload/{{ product.image }}" alt="" style="width: 10%" class="img-thumbnail"></td>
+                    <th>Фото</th>
+                    <!--Плохо работает-->
+                    <!--<td><img src="../../../upload/{{ product.image }}" alt="" style="width: 10%" class="img-thumbnail"></td>-->
                     <td><a href="#">{{ product.name }}</a></td>
                     <td>{{ product.price }} грн.</td>
                     <td>0 шт</td>
-                    <td>{{ product.visible }}</td>
-                    <td>None</td>
+                    <!--Видимость-->
+                    <td class="text-center">
+                        {% if product.visible == 0 %}
+                        <img src="https://png.icons8.com/invisible/dusk/33/000000" width="30px">
+                        {% else %}
+                        <img src="https://png.icons8.com/eye/dusk/33/000000" width="30px">
+                        {% endif %}
+                    </td>
+                    <!--Действия-->
+                    <td class="text-center">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <input type="hidden" value="{{ product.id }}" name="id">
+                                <!--Иконка для удаления товара. Узнать как сделать-->
+                                <!--<img src="https://png.icons8.com/clear-symbol/dusk/100/000000">-->
+                                <input type="submit" value="Удалить" name="delete" class="btn btn-outline-danger btn-sm">
+                                <input type="submit" value="Редактировать" name="" class="btn btn-outline-warning btn-sm">
+                                <a href="http://projectx/" class="btn btn-outline-info btn-sm">Просмотр</a>
+                                <!--<input type="button" value="Просмотр" class="btn btn-outline-info btn-sm">-->
+                            </div>
+                        </form>
+                    </td>
                 </tr>
                 </tbody>
                 {% endfor %}

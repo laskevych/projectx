@@ -67,60 +67,40 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
         <h1 class=\"w-100\"></h1>
     </div>
     <div class=\"row align-items-center\" style=\"height: 130px \">
+        <!--Товары-->
             <div class=\"col\">
-                <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/trolley/dusk/64\" title=\"Stock\" width=\"64\" height=\"64\">
                 <a href=\"http://projectx/admin/products/\">
-                    <p class=\"text-center\">Товары</p>
+                    <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/trolley/dusk/64\" title=\"Stock\" width=\"64\" height=\"64\">
                 </a>
+                <p class=\"text-center\">Товары</p>
             </div>
+        <!--Заказы-->
             <div class=\"col\">
-                <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/deposit/dusk/64\" title=\"Deposit\" width=\"64\" height=\"64\">
                 <a href=\"http://projectx/admin/orders/\">
-                    <p class=\"text-center\">Заказы<span class=\"badge badge-success\">+3</span></p>
+                    <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/deposit/dusk/64\" title=\"Deposit\" width=\"64\" height=\"64\">
                 </a>
+                <p class=\"text-center\">Заказы<span class=\"badge badge-success\">+3</span></p>
             </div>
+        <!--Страницы-->
             <div class=\"col\">
-                <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/customer/dusk/64\" title=\"Customer\">
-                <a href=\"http://projectx/admin/users/\">
-                    <p class=\"text-center\">Клиенты<span class=\"badge badge-success\">+10</span></p>
-                </a>
-            </div>
-            <div class=\"col\">
-                <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/google-docs/dusk/64\" title=\"Google Docs\" width=\"64\" height=\"64\">
                 <a href=\"http://projectx/admin/pages/\">
-                    <p class=\"text-center\">Страницы</p>
+                    <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/google-docs/dusk/64\" title=\"Google Docs\" width=\"64\" height=\"64\">
                 </a>
+                <p class=\"text-center\">Страницы</p>
             </div>
+        <!--Настройки-->
             <div class=\"col\">
-                <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/comments/dusk/64\" title=\"Comments\" width=\"64\" height=\"64\">
-                <a href=\"http://projectx/admin/comments/\">
-                    <p class=\"text-center\">Комментарии<span class=\"badge badge-success\"></span></p>
-                </a>
-            </div>
-            <div class=\"col\">
-                <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/google-blog-search/dusk/64\" title=\"Google Blog Search\" width=\"64\" height=\"64\">
-                <a href=\"http://projectx/admin/blog/\">
-                    <p class=\"text-center\">Блог</p>
-                </a>
-            </div>
-            <div class=\"col\">
-                <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/statistics/dusk/64\" title=\"Statistics\" width=\"64\" height=\"64\">
-                <a href=\"http://projectx/admin/stats/\">
-                    <p class=\"text-center\">Статистика</p>
-                </a>
-            </div>
-            <div class=\"col\">
-                <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/settings/dusk/64\" title=\"Settings\" width=\"64\" height=\"64\">
                 <a href=\"http://projectx/admin/settings/\">
-                    <p class=\"text-center\">Настройки</p>
+                    <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/settings/dusk/64\" title=\"Settings\" width=\"64\" height=\"64\">
                 </a>
+                <p class=\"text-center\">Настройки</p>
             </div>
     </div>
     <div class=\"col-12\">
         ";
-        // line 97
+        // line 77
         $this->displayBlock('content', $context, $blocks);
-        // line 100
+        // line 80
         echo "    </div>
 </div>
 
@@ -137,10 +117,10 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
     {
     }
 
-    // line 97
+    // line 77
     public function block_content($context, array $blocks = array())
     {
-        // line 98
+        // line 78
         echo "
         ";
     }
@@ -152,6 +132,6 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  144 => 98,  141 => 97,  136 => 4,  124 => 100,  122 => 97,  26 => 4,  21 => 1,  65 => 29,  38 => 4,  35 => 3,  29 => 2,);
+        return array (  124 => 78,  121 => 77,  116 => 4,  104 => 80,  102 => 77,  26 => 4,  21 => 1,);
     }
 }
