@@ -1,65 +1,28 @@
 {% extends "index.html" %}
 {% block title %}Project X CMS(demo){% endblock %}
 {% block content %}
-<div class="div col-12">
+<div class="col-12">
 	<p class="display-4">Товары</p>
 </div>
-<!--<div class="card-group">
-	<div class="card">
-		<img class="card-img-top" src="https://cdn0.iconfinder.com/data/icons/business-mix/512/cargo-512.png" width="256" height="256" alt="Card image cap">
-		<div class="card-block">
-			<h4 class="card-title">Товар 1</h4>
-			<p class="card-text">Товар с товарными свойствами. Лучший товар на рынке товаров. Описание товара товарное.</p>
-			<p class="card-text"><small class="text-muted">&lt;!&ndash;Last updated 3 mins ago&ndash;&gt;</small></p>
-		</div>
-	</div>
-	<div class="card">
-		<img class="card-img-top" src="https://cdn0.iconfinder.com/data/icons/business-mix/512/cargo-512.png" width="256" height="256" alt="Card image cap">
-		<div class="card-block">
-			<h4 class="card-title">Товар 2</h4>
-			<p class="card-text">Товар с товарными свойствами. Лучший товар на рынке товаров.</p>
-			<p class="card-text"><small class="text-muted">&lt;!&ndash;Last updated 3 mins ago&ndash;&gt;</small></p>
-		</div>
-	</div>
-	<div class="card">
-		<img class="card-img-top" src="https://cdn0.iconfinder.com/data/icons/business-mix/512/cargo-512.png" width="256" height="256" alt="Card image cap">
-		<div class="card-block">
-			<h4 class="card-title">Товар 3</h4>
-			<p class="card-text">Товар с товарными свойствами. Лучший товар на рынке товаров. Описание товара товарное.</p>
-			<p class="card-text"><small class="text-muted">&lt;!&ndash;Last updated 3 mins ago&ndash;&gt;</small></p>
-		</div>
-	</div>
-	<div class="card">
-		<img class="card-img-top" src="https://cdn0.iconfinder.com/data/icons/business-mix/512/cargo-512.png" width="256" height="256" alt="Card image cap">
-		<div class="card-block">
-			<h4 class="card-title">Товар 4</h4>
-			<p class="card-text">Товар с товарными свойствами. Лучший товар на рынке товаров.</p>
-			<p class="card-text"><small class="text-muted">&lt;!&ndash;Last updated 3 mins ago&ndash;&gt;</small></p>
-		</div>
-	</div>
-</div>-->
-<div class="row">
+<div class="row col-12">
 	{% for product in products %}
 	<div class="card col-3">
 		{% if product.image == null %}
 		{# если человек не загрузил картинку вставляем заглушку #}
-		<img src="../../upload/image_stock.jpg" alt="не судьба" class="card-img-top" style="width: 100%">
+		<a href="http://projectx/{{product.url}}">
+			<img src="../../upload/image_stock.jpg" alt="Изображение отсутствует" title="{{ product.name }}" class="card-img-top" style="width: 100%">
+		</a>
 		{% else %}
-		<img src="../../upload/{{ product.image }}" alt="Image not found" class="card-img-top" style="width: 100%">
+		<a href="http://projectx/{{product.url}}">
+			<img src="../../upload/{{ product.image }}" alt="{{ product.name }}" title="{{ product.name }}" class="card-img-top" style="width: 100%">
+		</a>
 		{% endif %}
 		<div class="card-block">
-			<h4 class="card-title">{{ product.name }}</h4>
-			<p class="card-text">{{ product.description }}</p>
+			<h4 class="card-title">{{ product.name|slice(0,25) }}</h4>
+			<p class="card-text">{{ product.description|slice(0,150)~'...' }}</p>
 		</div>
 		<ul class="list-group list-group-flush">
 			<li class="list-group-item">{{ product.price }} грн.</li>
-			{% if product.visible == 1 %}
-			<li class="list-group-item">Видимость: <span class="badge badge-default"> On</span></li>
-			{% else %}
-			<li class="list-group-item">Видимость: <span class="badge badge-default"> Off</span></li>
-			{% endif %}
-			<li class="list-group-item">ID: {{product.id}}</li>
-			<li class="list-group-item">URL: {{product.url}}</li>
 		</ul>
 		<div class="card-block">
 			<a href="#" class="btn btn-primary">Купить</a>
@@ -67,34 +30,4 @@
 	</div>
 	{% endfor %}
 </div>
-<!--<div class="card-block text-left">
-	&lt;!&ndash;<h4 class="card-title display-7">Список товаров</h4>&ndash;&gt;
-	<table class="table table-hover">
-		<thead>
-		<tr>
-			<th>ID</th>
-			<th>Фото</th>
-			<th>Название</th>
-			<th>Цена</th>
-			<th>Кол-во</th>
-			<th>Видимость</th>
-			<th>Действия</th>
-			&lt;!&ndash;<th>Username</th>&ndash;&gt;
-		</tr>
-		</thead>
-		{% for product in products %}
-		<tbody>
-		<tr>
-			<th>{{ product.id }}</th>
-			<td>{{ product.image }}</td>
-			<td>{{ product.name }}</td>
-			<td>{{ product.price }} грн.</td>
-			<td> 0 шт</td>
-			<td>{{ product.visible }}</td>
-			<td>None</td>
-		</tr>
-		</tbody>
-		{% endfor %}
-	</table>
-</div>-->
 {% endblock %}

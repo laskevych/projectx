@@ -7,14 +7,17 @@ class ProductsAdmin extends CoreAdmin
         $products = new Products();
         $products_catalog = $products->getProducts($visible = 'all');
         $request = new Request();
-        if ($request->method() == 'POST' ==)
+        if ($request->method() == 'POST' && $_POST['delete'])
         {
             $id = $request->post('id');
-            //echo "ID: ".$id;
             $products->deleteProduct($id);
         }
+        elseif ($request->method() == 'POST' && $_POST['edit'])
+        {
+            $id = $request->post('id');
+            echo $id;
+        }
         $arr = array(
-            'name' => 'Products',
             'products' => $products_catalog,
         );
         return $this->view->render('admin_products.html', $arr);

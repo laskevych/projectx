@@ -1,7 +1,6 @@
 {% extends "index.html" %}
 {% block title %}Товары{% endblock %}
 {% block content %}
-<div class="col-12">
     <div class="card text-center">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
@@ -57,7 +56,7 @@
                                 <!--Иконка для удаления товара. Узнать как сделать-->
                                 <!--<img src="https://png.icons8.com/clear-symbol/dusk/100/000000">-->
                                 <input type="submit" value="Удалить" name="delete" class="btn btn-outline-danger btn-sm">
-                                <input type="submit" value="Редактировать" name="" class="btn btn-outline-warning btn-sm">
+                                <input type="submit" value="Редактировать" name="edit" class="btn btn-outline-warning btn-sm">
                                 <a href="http://projectx/" class="btn btn-outline-info btn-sm">Просмотр</a>
                                 <!--<input type="button" value="Просмотр" class="btn btn-outline-info btn-sm">-->
                             </div>
@@ -69,5 +68,4 @@
             </table>
         </div>
     </div>
-</div>
 {% endblock %}

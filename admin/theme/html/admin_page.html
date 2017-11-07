@@ -1,0 +1,90 @@
+{% extends "index.html" %}
+{% block title %}Добавить страницу{% endblock %}
+{% block content %}
+<div class="card text-center">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="http://projectx/admin/pages/">Главное меню</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="http://projectx/admin/page/">
+                    {% if product.id %}
+                    Редактирование страницы
+                    {% else %}
+                    Добавление страницы
+                    {% endif %}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{{ page.id }}">
+        <div class="row">
+            <div class="card-block col-12 text-left">
+                <!--Название-->
+                <div class="form-group">
+                    <label for="page-title">Название</label>
+                    <input class="form-control" type="text" name="title" id="page-title" value="{{ page.title }}">
+                </div>
+
+                <!--Название (ошибка)
+                <div class="form-group has-danger">
+                    <label class="form-control-label" for="inputDanger1">Название (обязательное поле)</label>
+                    <input type="text" class="form-control form-control-danger" id="inputDanger1">
+                </div>-->
+
+                <!--Ссылка-->
+                <div class="form-inline text-center">
+                    <label for="page-url" class="col-1">Ссылка</label>
+                    {% if page.url %}
+                    <input class="form-control form-control-sm col-5" type="text" name="url" id="page-url" value="{{ page.url }}" readonly>
+                    {% else %}
+                    <input class="form-control form-control-sm col-9" type="text" name="url" id="page-url" value="{{ page.url }}">
+                        {% endif %}
+                    <!--Видимость. Switch-->
+                    <label class="col-1">Видимость</label>
+                    <div class="btn-group col-1" data-toggle="buttons">
+                        <!--Проверка и опеределения активного включателя-->
+                        {% if product.id %}
+                        {% if product.visible == 1 %}
+                        {% set labelOn = 'active' %}
+                        {% set labelOff = '' %}
+                        {% else %}
+                        {% set labelOn = '' %}
+                        {% set labelOff = 'active' %}
+                        {% endif %}
+                        {% else %}
+                        {% set labelOn = '' %}
+                        {% set labelOff = 'active' %}
+                        {% endif %}
+                        <label class="btn btn-outline-primary btn-sm {{ labelOn }}">
+                            <input type="radio" name="visible" autocomplete="off" value="1">On
+                        </label>
+                        <label class="btn btn-outline-primary btn-sm {{ labelOff }}">
+                            <input type="radio" name="visible" autocomplete="off" value="0">Off
+                        </label>
+                    </div>
+                </div>
+                <div class="card-block col-3 align-self-center">
+                </div>
+            </div>
+            <div class="card-block col-12">
+                <!--Описание страницы-->
+                <div class="form-group">
+                    <label for="page-description">Описание страницы</label>
+                    <textarea class="form-control" id="page-description" name="description" rows="5">{{ product.description }}</textarea>
+                    <p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или "невозможных" слов.</p>
+                </div>
+            </div>
+            <div class="card-block col-12">
+                {% set btn = 'Добавить' %}
+                {% if product.id %}
+                {% set btn = 'Сохранить' %}
+                {% endif %}
+                <input type="submit" class="btn btn-success col-12" value="{{ btn }}">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

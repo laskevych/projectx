@@ -1,6 +1,6 @@
 <?php
 
-class Route
+class Route //extends Database todo: подумать
 {
 	public static function run()
     {
@@ -11,9 +11,8 @@ class Route
         $uri = parse_url($_SERVER['REQUEST_URI']);
         $uri_array = array(
             '/' => 'Main',
-            '/catalog' => 'Catalog',
-            //'/admin/' => 'Admin',
-            //'/admin/products/' => 'ProductsAdmin',
+            '/basket' => 'Basket',
+            '/pitstsa' => 'Product',
         );
 
 		if ($uri['path'])

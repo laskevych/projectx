@@ -1,7 +1,6 @@
 {% extends "index.html" %}
 {% block title %}Добавить товар{% endblock %}
 {% block content %}
-<!--<div class="col-12">-->
     <div class="card text-center">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
@@ -31,10 +30,21 @@
                         <label for="product-name">Название</label>
                         <input class="form-control" type="text" name="name" id="product-name" value="{{ product.name }}">
                     </div>
+
+                    <!--Название (ошибка)
+                    <div class="form-group has-danger">
+                        <label class="form-control-label" for="inputDanger1">Название (обязательное поле)</label>
+                        <input type="text" class="form-control form-control-danger" id="inputDanger1">
+                    </div>-->
+
                     <!--Ссылка и Цена-->
                     <div class="form-inline text-center">
                         <label for="product-url" class="col-1">Ссылка</label>
-                        <input class="form-control form-control-sm col-9" type="text" name="url" id="product-url" value="{{ product.url }}">
+                        {% if product.url %}
+                            <input class="form-control form-control-sm col-9" type="text" name="url" id="product-url" value="{{ product.url }}" readonly>
+                        {% else %}
+                            <input class="form-control form-control-sm col-9" type="text" name="url" id="product-url" value="{{ product.url }}">
+                        {% endif %}
                         <label for="product-price" class="col-1">Цена</label>
                         <input class="form-control form-control-sm col-sm-1" type="text" name="price" id="product-price" value="{{ product.price }}">
                     </div>
@@ -89,6 +99,7 @@
                     <div class="form-group">
                         <label for="exampleTextarea">Описание товара</label>
                         <textarea class="form-control" id="exampleTextarea" name="description" rows="3">{{ product.description }}</textarea>
+                        <p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или "невозможных" слов.</p>
                     </div>
                 </div>
                 <div class="card-block col-12">

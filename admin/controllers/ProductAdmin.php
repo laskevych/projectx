@@ -7,7 +7,7 @@ class ProductAdmin extends CoreAdmin
         $request = new Request();
         $product = new stdClass();
 
-        if ($request->method() == 'POST')
+        if ($request->method() == 'POST' && $_POST['name'] != null)
         {
             $product->name = $request->post('name');
             $product->description = $request->post('description');
@@ -36,6 +36,7 @@ class ProductAdmin extends CoreAdmin
             $product = $products->getProduct($id);
             //print_r($product);
         }
+
         //todo: вывод категорий
         /*$categories = new Categories();
         $category = self::makeTree($categories->getCategories());
@@ -46,7 +47,9 @@ class ProductAdmin extends CoreAdmin
         $arr = array(
             'product' => $product,
         );
+        /*echo "<pre>";
         print_r($arr);
+        echo "</pre>";*/
         return $this->view->render('admin_product.html', $arr);
     }
 }

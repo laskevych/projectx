@@ -9,14 +9,51 @@
                     <a class="nav-link active" href="http://projectx/admin/pages/">Главное меню</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Другие страницы</a>
+                    <a href="/admin/page/" class="btn btn-outline-success">Добавить</a>
                 </li>
             </ul>
         </div>
-        <div class="card-block">
-            <h4 class="card-title">Список страниц</h4>
-            <p class="card-text">Создавайте новые страницы</p>
-            <a href="#" class="btn btn-primary disabled">Создать</a>
+        <div class="card-block text-left">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <!--<th>ID</th>-->
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th class="text-center">Видимость</th>
+                    <th class="text-center">Действия</th>
+                    <!--<th>Username</th>-->
+                </tr>
+                </thead>
+                {% for page in pages %}
+                <tbody>
+                <tr>
+                    <!--<th>{{ page.id }}</th>-->
+                    <td>{{ page.title }}</td>
+                    <td>{{ page.description|slice(0,45)~'...' }}</td>
+                    <!--Видимость-->
+                    <td class="text-center">
+                        {% if page.visible == 0 %}
+                        <img src="https://png.icons8.com/invisible/dusk/33/000000" width="30px">
+                        {% else %}
+                        <img src="https://png.icons8.com/eye/dusk/33/000000" width="30px">
+                        {% endif %}
+                    </td>
+                    <!--Действия-->
+                    <td class="text-center">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <input type="hidden" value="{{ page.id }}" name="id">
+                                <input type="submit" value="Удалить" name="delete" class="btn btn-outline-danger btn-sm">
+                                <input type="submit" value="Редактировать" name="edit" class="btn btn-outline-warning btn-sm">
+                                <a href="http://projectx/" class="btn btn-outline-info btn-sm">Просмотр</a>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+                {% endfor %}
+            </table>
         </div>
     </div>
 </div>

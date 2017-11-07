@@ -31,6 +31,10 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 
 \t<!-- Bootstrap CSS -->
 \t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css\" integrity=\"sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ\" crossorigin=\"anonymous\">
+\t<!-- jQuery first, then Tether, then Bootstrap JS. -->
+\t<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\" crossorigin=\"anonymous\"></script>
+\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" crossorigin=\"anonymous\"></script>
+\t<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" crossorigin=\"anonymous\"></script>
 </head>
 <body>
 <nav class=\"navbar navbar-toggleable-md navbar-light bg-faded\">
@@ -61,6 +65,7 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 \t\t</ul>
 \t</div>
 </nav>
+
 <div class=\"container\">
 \t<!--Карусель Bootstrap 4-->
 \t\t<!--<div id=\"carouselExampleIndicators\" class=\"carousel slide col\" data-ride=\"carousel\">
@@ -89,12 +94,7 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 \t\t\t\t<span class=\"sr-only\">Next</span>
 \t\t\t</a>
 \t\t</div>-->
-\t<div class=\"row\">
-\t\t<!--<div class=\"col-12\">
-\t\t\t<p class=\"display-3\">Главная</p>
-\t\t</div>-->
-\t</div>
-\t<div id=\"content\">
+\t<div>
 \t\t";
         // line 75
         $this->displayBlock('content', $context, $blocks);
@@ -102,10 +102,6 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
         echo "\t</div>
 </div>
 
-<!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\" crossorigin=\"anonymous\"></script>
-<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" crossorigin=\"anonymous\"></script>
-<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" crossorigin=\"anonymous\"></script>
 </body>
 </html>
 
@@ -132,6 +128,6 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  124 => 76,  121 => 75,  116 => 4,  102 => 78,  26 => 4,  21 => 1,  182 => 92,  171 => 87,  166 => 85,  162 => 84,  158 => 83,  154 => 82,  150 => 80,  146 => 79,  128 => 63,  114 => 56,  110 => 54,  106 => 52,  104 => 51,  100 => 75,  94 => 47,  90 => 46,  85 => 44,  82 => 43,  78 => 42,  38 => 4,  35 => 3,  29 => 2,);
+        return array (  120 => 76,  117 => 75,  112 => 4,  102 => 78,  100 => 75,  26 => 4,  21 => 1,);
     }
 }

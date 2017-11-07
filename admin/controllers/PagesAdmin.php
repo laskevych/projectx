@@ -1,14 +1,26 @@
 <?php
-require_once '../models/Database.php';
 
 class PagesAdmin extends CoreAdmin
 {
     public function fetch()
     {
-        $obj = new Database();
-        $q = "SELECT * FROM books";
-        $obj->query($q);
-        $res = $obj->results();
-        return $this->view->render('admin_pages.html', array('books' => $res));
+
+        $pages = new Pages();
+        $pages_catalog = $pages->getPages($visible = 'all');
+        $request = new Request();
+        if ($request->method() == 'POST' && $_POST['delete'])
+        {
+            $id = $request->post('id');
+            $pages->deletePage($id);
+        }
+        elseif ($request->method() == 'POST' && $_POST['edit'])
+        {
+            $id = $request->post('id');
+            echo $id;
+        }
+        $arr = array(
+            'pages' => $pages_catalog,
+        );
+        return $this->view->render('admin_pages.html', $arr);
     }
 }

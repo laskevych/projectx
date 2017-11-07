@@ -83,4 +83,8 @@ class Products extends Database
             $this->query($query);
         }
     }
+    public function cutDescription($description)
+    {
+
+    }
 }

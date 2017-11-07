@@ -96,13 +96,11 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
                 <p class=\"text-center\">Настройки</p>
             </div>
     </div>
-    <div class=\"col-12\">
-        ";
-        // line 77
+    ";
+        // line 76
         $this->displayBlock('content', $context, $blocks);
-        // line 80
-        echo "    </div>
-</div>
+        // line 79
+        echo "</div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\" crossorigin=\"anonymous\"></script>
@@ -117,12 +115,13 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
     {
     }
 
-    // line 77
+    // line 76
     public function block_content($context, array $blocks = array())
     {
+        // line 77
+        echo "        ";
         // line 78
-        echo "
-        ";
+        echo "    ";
     }
 
     public function getTemplateName()
@@ -132,6 +131,6 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  124 => 78,  121 => 77,  116 => 4,  104 => 80,  102 => 77,  26 => 4,  21 => 1,);
+        return array (  124 => 78,  122 => 77,  119 => 76,  114 => 4,  103 => 79,  101 => 76,  26 => 4,  21 => 1,);
     }
 }
