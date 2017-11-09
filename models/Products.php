@@ -15,8 +15,6 @@ class Products extends Database
             $var_sql = implode(',', $values);
 
             $query = "INSERT INTO products ($column_sql) VALUES ($var_sql)";
-            //echo $query;
-            //echo "<br>";
             $this->query($query);
             return $this->resId();
         }
@@ -67,7 +65,8 @@ class Products extends Database
 
             $column_sql = implode(',', $columns);
             $query = "UPDATE products SET $column_sql WHERE id=$id";
-            echo $query;
+            $this->query($query);
+            return $id;
         }
     }
 
@@ -83,8 +82,10 @@ class Products extends Database
             $this->query($query);
         }
     }
-    public function cutDescription($description)
+    public function getProductsUrl()
     {
-
+        $query = "SELECT url FROM products";
+        $this->query($query);
+        return $this->results();
     }
 }

@@ -45,7 +45,7 @@ class ProductAdmin extends CoreAdmin
         );*/
 
         $arr = array(
-            'product' => $product,
+            'Products' => $product,
         );
         /*echo "<pre>";
         print_r($arr);

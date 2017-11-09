@@ -5,7 +5,7 @@ class ProductsAdmin extends CoreAdmin
     public function fetch()
     {
         $products = new Products();
-        $products_catalog = $products->getProducts($visible = 'all');
+        $products_catalog = $products->getProducts('all');
         $request = new Request();
         if ($request->method() == 'POST' && $_POST['delete'])
         {

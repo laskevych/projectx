@@ -19,7 +19,6 @@ class Pages extends Database
             $var_sql = implode(',', $values);
 
             $query = "INSERT INTO pages ($column_sql) VALUE ($var_sql)";
-            echo $query;
             $this->query($query);
             return $this->resId();
         }
@@ -71,7 +70,8 @@ class Pages extends Database
 
             $column_sql = implode(',', $columns);
             $query = "UPDATE pages SET $column_sql WHERE id=$id";
-            echo $query;
+            $this->query($query);
+            return $id;
         }
     }
 
@@ -84,7 +84,6 @@ class Pages extends Database
         else
         {
             $query = "DELETE FROM pages WHERE id = '".$id."'";
-            echo $query;
             $this->query($query);
         }
     }

@@ -51,9 +51,6 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 \t\t\t\t<a class=\"nav-link\" href=\"http://projectx/\">Главная<span class=\"sr-only\">(current)</span></a>
 \t\t\t</li>
 \t\t\t<li class=\"nav-item\">
-\t\t\t\t<a class=\"nav-link\" href=\"http://projectx/admin\">Админ панель</a>
-\t\t\t</li>
-\t\t\t<li class=\"nav-item\">
 \t\t\t\t<a class=\"nav-link\" href=\"http://projectx/basket/\">Корзина</a>
 \t\t\t</li>
 \t\t\t<li class=\"nav-item\">
@@ -61,6 +58,9 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 \t\t\t</li>
 \t\t\t<li class=\"nav-item\">
 \t\t\t\t<a class=\"nav-link disabled\" href=\"#\">О нас</a>
+\t\t\t</li>
+\t\t\t<li class=\"nav-item\">
+\t\t\t\t<a class=\"nav-link\" href=\"http://projectx/admin\"><strong>Админ панель</strong></a>
 \t\t\t</li>
 \t\t</ul>
 \t</div>
