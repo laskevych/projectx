@@ -1,0 +1,96 @@
+{% extends "index.html" %}
+{% block title %}Корзина{% endblock %}
+{% block content %}
+<div class="col-12">
+    <p class="display-4">Корзина</p>
+</div>
+<div id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="card">
+        <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Товары
+                </a>
+            </h5>
+        </div>
+        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+            {% for product in products %}
+            <div class="card-block">
+                <div class="card">
+                    <div class="card-block col-12 row align-items-center">
+                        <div class="col-3">
+                            <a href="http://projectx/{{product.url}}">
+                                <img src="../../upload/{{ product.image }}" alt="{{ product.name }}" title="{{ product.name }}" style="width: 35%">
+                            </a>
+                        </div>
+                        <div class="col-3">{{ product.name }}</div>
+                        <div class="col-2">Количество</div>
+                        <div class="col-2">{{ product.price }}</div>
+                        <div class="col-2"><button type="button" class="btn btn-danger">Удаление</button></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <p>Сумма заказа?</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Личная информация
+                </a>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="card-block">
+                <div class="card">
+                    <div class="card-block">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <!--Имя-->
+                                <label for="orderName">Имя</label>
+                                <input type="text" class="form-control" name="user_name" id="orderName">
+                                <!--Фамилия-->
+                                <label for="orderLastName">Фамилия</label>
+                                <input type="text" class="form-control" name="user_lastname" id="orderLastName">
+                                <!--Телефон-->
+                                <label for="orderPhone">Телефон</label>
+                                <input type="phone" class="form-control" name="name" id="orderPhone">
+                                <!--Email-->
+                                <label for="orderEmail">Email</label>
+                                <input type="email" class="form-control" name="user_email" id="orderEmail">
+                                <!--Город-->
+                                <label for="orderAddress">Город</label>
+                                <input type="text" class="form-control" name="user_address" id="orderAddress">
+                                <!--Комментарий к заказу-->
+                                <label for="orderComment">Комментарий к заказу</label>
+                                <textarea class="form-control" id="orderComment" name="user_comment" rows="2"></textarea>
+                                <p>mum  достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором.
+                                    Он использует словарь из более
+                                    чем 200 латинских слов, а также набор моделей предложений. В резу
+                                    льтате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет по
+                                    вторяющихся абзацей или "невозможных" слов.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" role="tab" id="headingThree">
+            <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Доставка и оплата
+                </a>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="card-block">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

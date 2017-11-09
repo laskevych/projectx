@@ -56,7 +56,9 @@
                                 <!--Иконка для удаления товара. Узнать как сделать-->
                                 <!--<img src="https://png.icons8.com/clear-symbol/dusk/100/000000">-->
                                 <input type="submit" value="Удалить" name="delete" class="btn btn-outline-danger btn-sm">
-                                <input type="submit" value="Редактировать" name="edit" class="btn btn-outline-warning btn-sm">
+                                <form action="" method="get">
+                                    <input type="submit" value="{{ product.id }}" name="id" class="btn btn-outline-warning btn-sm">
+                                </form>
                                 <a href="http://projectx/" class="btn btn-outline-info btn-sm">Просмотр</a>
                                 <!--<input type="button" value="Просмотр" class="btn btn-outline-info btn-sm">-->
                             </div>
@@ -68,4 +70,9 @@
             </table>
         </div>
     </div>
+<form action="../../controllers/Admin.php" method="get">
+    <div class="form-group">
+        <input type="submit" value="1255" name="id">
+    </div>
+</form>
 {% endblock %}

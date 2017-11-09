@@ -19,10 +19,9 @@ class RouteAdmin
             '/admin/pages/' => 'PagesAdmin',
             '/admin/page/' => 'PageAdmin',
             '/admin/settings/' => 'SettingsAdmin',
+            '/admin/404/' => '404Admin',
         );
-        /*echo "URL: ".$uri['path'];
-        echo "<br>";
-        echo "Controller: ".$controlers_dir.$uri_array[$uri['path']].'.php';*/
+
 		if ($uri['path'])
 		{
 			
@@ -37,27 +36,25 @@ class RouteAdmin
 				}
 				else
                 {
-					RouteAdmin::error404();
-                    /*echo "<br>";
-                    echo "errror_1";*/
+                    require 'controllers/Error404Admin.php';
+                    $controler = new Error404Admin();
+                    if (method_exists($controler, 'fetch'))
+                    {
+                        print $controler->fetch();
+                    }
+                    echo 'hello_admin_1';
 				}
 			}
 			else
             {
-                /*echo "<br>";
-                echo "errror_2";*/
-                RouteAdmin::error404();
+                require 'controllers/Error404Admin.php';
+                $controler = new Error404Admin;
+                if (method_exists($controler, 'fetch'))
+                {
+                    print $controler->fetch();
+                }
+                echo 'hello_admin_2';
 			}
 		}
-		//todo: загрузка и предосмотр картинок
-		/*if ($uri['path'] !== '/admin/product/')
-        {
-            session_destroy($_SESSION['upload']['images']);
-        }*/
-	}
-	public static function error404()
-	{
-	    echo "<br>";
-	    echo 'Ошибка';
 	}
 }
