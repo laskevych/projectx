@@ -4,7 +4,6 @@ class RouteAdmin
 {
 	public static function run()
     {
-
         $controlers_dir = 'controllers/';
 
         $uri = parse_url($_SERVER['REQUEST_URI']);
@@ -22,39 +21,65 @@ class RouteAdmin
             '/admin/404/' => '404Admin',
         );
 
-		if ($uri['path'])
-		{
-			
-			if (file_exists($controlers_dir.$uri_array[$uri['path']].'.php'))
-			{
-				require $controlers_dir.$uri_array[$uri['path']].'.php';
-                $controler = new $uri_array[$uri['path']](); //new Main();
-
-				if (method_exists($controler, 'fetch'))
-				{
-					print $controler->fetch();
-				}
-				else
+        if ($uri['path'])
+        {
+            if (!preg_match('/(^\/admin\/){1}([a-zA-Z]){0,}\/[a-zA-Z0-9]{1,}/',$uri['path'],$matches))
+            {
+                if (file_exists($controlers_dir.$uri_array[$uri['path']].'.php'))
                 {
-                    require 'controllers/Error404Admin.php';
-                    $controler = new Error404Admin();
+                    require $controlers_dir.$uri_array[$uri['path']].'.php';
+                    $controler = new $uri_array[$uri['path']]();
+
                     if (method_exists($controler, 'fetch'))
                     {
                         print $controler->fetch();
                     }
-                    echo 'hello_admin_1';
-				}
-			}
-			else
-            {
-                require 'controllers/Error404Admin.php';
-                $controler = new Error404Admin;
-                if (method_exists($controler, 'fetch'))
-                {
-                    print $controler->fetch();
+                    else
+                    {
+                        self::Error404Admin();
+                    }
                 }
-                echo 'hello_admin_2';
-			}
-		}
+                else
+                {
+                    self::Error404Admin();
+                }
+            }
+            else
+            {
+                $long_url = explode('/',$uri['path']);
+                print_r($long_url);
+                echo "<br>";
+                echo $long_url[2];
+                echo "<br>";
+                echo $controlers_dir.$uri_array["/admin/".$long_url[2]."/"].'.php';
+                if (file_exists($controlers_dir.$uri_array["/".$long_url[2]."/"].'.php'))
+                {
+                    require $controlers_dir.$uri_array["/admin/".$long_url[2]."/"].'.php';
+                    $controler = new $uri_array["/admin/".$long_url[2]."/"]();
+
+                    if (method_exists($controler, 'fetch'))
+                    {
+                        print $controler->fetch();
+                    }
+                    else
+                    {
+                        self::Error404Admin();
+                    }
+                }
+                else
+                {
+                    self::Error404Admin();
+                }
+            }
+        }
 	}
+    public static function Error404Admin()
+    {
+        require 'controllers/Error404Admin.php';
+        $controler = new Error404Admin();
+        if (method_exists($controler, 'fetch'))
+        {
+            print $controler->fetch();
+        }
+    }
 }

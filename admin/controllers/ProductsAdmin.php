@@ -12,11 +12,7 @@ class ProductsAdmin extends CoreAdmin
             $id = $request->post('id');
             $products->deleteProduct($id);
         }
-        elseif ($request->method() == 'GET')
-        {
-            $id = $request->get('id', 'integer');
-            echo $id;
-        }
+
         $arr = array(
             'products' => $products_catalog,
         );
