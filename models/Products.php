@@ -30,6 +30,19 @@ class Products extends Database
             return $this->result();
         }
     }
+    public function getProductView($url)
+    {
+        if (empty($url))
+        {
+            return false;
+        }
+        else
+        {
+            $query = "SELECT id,name,description,url,image,price,visible FROM products WHERE url = '".$url."' LIMIT 1";
+            $this->query($query);
+            return $this->result();
+        }
+    }
 
     //Отображение товаров. Три режима отображения.
     public function getProducts($visible)
@@ -81,11 +94,5 @@ class Products extends Database
             $query = "DELETE FROM products WHERE products.id = '".$id."'";
             $this->query($query);
         }
-    }
-    public function getProductsUrl()
-    {
-        $query = "SELECT url FROM products";
-        $this->query($query);
-        return $this->results();
     }
 }

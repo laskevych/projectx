@@ -13,10 +13,9 @@
 			</a>
 			<div class="card-block">
 				<h4 class="card-title">{{ product.name|slice(0,25) }}</h4>
-				<p class="card-text">{{ product.description|slice(0,150)~'...' }}</p>
 			</div>
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item">{{ product.price }} грн.</li>
+				<li class="list-group-item">Цена: {{ product.price }} грн.</li>
 			</ul>
 			<div class="card-footer">
 				<a href="#" class="btn btn-primary">Купить</a>

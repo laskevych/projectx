@@ -65,14 +65,10 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
             // line 15
             echo twig_escape_filter($this->env, twig_slice($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "name"), 0, 25), "html", null, true);
             echo "</h4>
-\t\t\t\t<p class=\"card-text\">";
-            // line 16
-            echo twig_escape_filter($this->env, (twig_slice($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "description"), 0, 150) . "..."), "html", null, true);
-            echo "</p>
 \t\t\t</div>
 \t\t\t<ul class=\"list-group list-group-flush\">
-\t\t\t\t<li class=\"list-group-item\">";
-            // line 19
+\t\t\t\t<li class=\"list-group-item\">Цена: ";
+            // line 18
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "price"), "html", null, true);
             echo " грн.</li>
 \t\t\t</ul>
@@ -86,7 +82,7 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 27
+        // line 26
         echo "</div>
 ";
     }
@@ -103,6 +99,6 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  90 => 27,  76 => 19,  70 => 16,  66 => 15,  56 => 12,  52 => 11,  48 => 9,  44 => 8,  38 => 4,  35 => 3,  29 => 2,);
+        return array (  86 => 26,  72 => 18,  66 => 15,  56 => 12,  52 => 11,  48 => 9,  44 => 8,  38 => 4,  35 => 3,  29 => 2,);
     }
 }

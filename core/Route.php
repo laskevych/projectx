@@ -14,7 +14,7 @@ class Route
         );
 		if ($uri['path'])
 		{
-		    if (!preg_match('/(^\/([a-zA-Z]){0,}\/){1}[a-zA-Z0-9]{1,}/',$uri['path'],$matches))
+		    if (!preg_match('/(^\/([a-zA-Z]){0,}\/){1}[a-zA-Z0-9]{1,}/',$uri['path']))
             {
                 if (file_exists($controlers_dir.$uri_array[$uri['path']].'.php'))
                 {
@@ -38,7 +38,6 @@ class Route
             else
             {
                 $long_url = explode('/',$uri['path']);
-                echo $controlers_dir.$uri_array["/".$long_url[1]."/"].'.php';
                 if (file_exists($controlers_dir.$uri_array["/".$long_url[1]."/"].'.php'))
                 {
                     require $controlers_dir.$uri_array["/".$long_url[1]."/"].'.php';

@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+{% block title %}Товары{% endblock %}
+{% block content %}
+<div class="p-2">
+</div>
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="http://projectx/">Главная</a>
+    <a class="breadcrumb-item" href="http://projectx/products/">Товары</a>
+    <span class="breadcrumb-item active">{{ product.name }}</span>
+</nav>
+<div class="card-desk row">
+    <div class="col-4">
+        <div class="card">
+            <a href="http://projectx/products/{{product.url}}">
+                <img src="../../upload/{{ product.image }}" alt="{{ product.name }}" title="{{ product.name }}" class="card-img-top" style="width: 100%">
+            </a>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">{{ product.name }}</h4>
+                <p class="card-text">{{ product.description }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Цена: {{ product.price }} грн.</li>
+            </ul>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">Купить</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

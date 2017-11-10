@@ -4,7 +4,7 @@ class Basket extends Core
     public function fetch()
     {
         $products = new Products();
-        $products_catalog = $products->getProducts($visible = 'all');
+        $products_catalog = $products->getProducts($visible = 'disabled');
 
         $arr = array(
             'products' => $products_catalog,

@@ -67,40 +67,11 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 </nav>
 
 <div class=\"container\">
-\t<!--Карусель Bootstrap 4-->
-\t\t<!--<div id=\"carouselExampleIndicators\" class=\"carousel slide col\" data-ride=\"carousel\">
-\t\t\t<ol class=\"carousel-indicators\">
-\t\t\t\t<li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>
-\t\t\t\t<li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>
-\t\t\t\t<li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li>
-\t\t\t</ol>
-\t\t\t<div class=\"carousel-inner\" role=\"listbox\">
-\t\t\t\t<div class=\"carousel-item active\">
-\t\t\t\t\t<img class=\"d-block img-fluid\" src=\"http://otdo134.ru/wp-content/uploads/2014/05/placeholder-blue.png\" alt=\"First slide\">
-\t\t\t\t</div>
-\t\t\t\t<div class=\"carousel-item\">
-\t\t\t\t\t<img class=\"d-block img-fluid\" src=\"http://otdo134.ru/wp-content/uploads/2014/05/placeholder-blue.png\" alt=\"Second slide\">
-\t\t\t\t</div>
-\t\t\t\t<div class=\"carousel-item\">
-\t\t\t\t\t<img class=\"d-block img-fluid\" src=\"http://otdo134.ru/wp-content/uploads/2014/05/placeholder-blue.png\" alt=\"Third slide\">
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t\t<a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">
-\t\t\t\t<span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
-\t\t\t\t<span class=\"sr-only\">Previous</span>
-\t\t\t</a>
-\t\t\t<a class=\"carousel-control-next\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\">
-\t\t\t\t<span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
-\t\t\t\t<span class=\"sr-only\">Next</span>
-\t\t\t</a>
-\t\t</div>-->
-\t<div>
-\t\t";
-        // line 75
+\t";
+        // line 47
         $this->displayBlock('content', $context, $blocks);
-        // line 78
-        echo "\t</div>
-</div>
+        // line 49
+        echo "</div>
 
 </body>
 </html>
@@ -113,12 +84,11 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
     {
     }
 
-    // line 75
+    // line 47
     public function block_content($context, array $blocks = array())
     {
-        // line 76
-        echo "
-\t\t";
+        // line 48
+        echo "\t";
     }
 
     public function getTemplateName()
@@ -128,6 +98,6 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  120 => 76,  117 => 75,  112 => 4,  102 => 78,  100 => 75,  26 => 4,  21 => 1,);
+        return array (  91 => 48,  88 => 47,  83 => 4,  74 => 49,  72 => 47,  26 => 4,  21 => 1,  77 => 25,  71 => 22,  67 => 21,  53 => 14,  49 => 13,  38 => 4,  35 => 3,  29 => 2,);
     }
 }

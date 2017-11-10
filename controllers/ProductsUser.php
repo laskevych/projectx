@@ -3,10 +3,13 @@ class ProductsUser extends Core
 {
     public function fetch()
     {
-        $products = new Products();
         $uri = parse_url($_SERVER['REQUEST_URI']);
-        echo "HELLO PRODUCTS USER";
-        print_r($uri);
-
+        $url = explode('/',$uri['path']);
+        $products = new Products();
+        $product = $products->getProductView($url[2]);
+        $arr = array(
+            'product' => $product,
+        );
+        return $this->view->render('product.html', $arr);
     }
 }

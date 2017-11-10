@@ -23,7 +23,7 @@ class RouteAdmin
 
         if ($uri['path'])
         {
-            if (!preg_match('/(^\/admin\/){1}([a-zA-Z]){0,}\/[a-zA-Z0-9]{1,}/',$uri['path'],$matches))
+            if (!preg_match('/(^\/admin\/){1}([a-zA-Z]){0,}\/[a-zA-Z0-9]{1,}/',$uri['path']))
             {
                 if (file_exists($controlers_dir.$uri_array[$uri['path']].'.php'))
                 {
@@ -47,11 +47,6 @@ class RouteAdmin
             else
             {
                 $long_url = explode('/',$uri['path']);
-                print_r($long_url);
-                echo "<br>";
-                echo $long_url[2];
-                echo "<br>";
-                echo $controlers_dir.$uri_array["/admin/".$long_url[2]."/"].'.php';
                 if (file_exists($controlers_dir.$uri_array["/".$long_url[2]."/"].'.php'))
                 {
                     require $controlers_dir.$uri_array["/admin/".$long_url[2]."/"].'.php';
