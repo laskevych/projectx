@@ -56,7 +56,8 @@
                                 <!--Иконка для удаления товара. Узнать как сделать-->
                                 <!--<img src="https://png.icons8.com/clear-symbol/dusk/100/000000">-->
                                 <input type="submit" value="Удалить" name="delete" class="btn btn-outline-danger btn-sm">
-                                <input type="submit" value="{{ product.id }}" name="id" class="btn btn-outline-warning btn-sm">
+                                <!--<input type="submit" value="{{ product.id }}" name="id" class="btn btn-outline-warning btn-sm">-->
+                                    <a href="http://projectx/admin/product/?id={{ product.id }}" class="btn btn-outline-warning btn-sm" role="button">Редактировать</a>
                                 <a href="http://projectx/" class="btn btn-outline-info btn-sm">Просмотр</a>
                                 <!--<input type="button" value="Просмотр" class="btn btn-outline-info btn-sm">-->
                             </div>

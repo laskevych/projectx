@@ -35,8 +35,8 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
     public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<div class=\"col-12\">
-\t<p class=\"display-4\">Товары</p>
+        echo "<div class=\"col-12 text-center\">
+\t<p class=\"display-4\">Главная</p>
 </div>
 <div class=\"card-desk row\">
 \t";

@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block content %}
+<div class="p-2">
+</div>
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="http://projectx/">Главная</a>
+    <span class="breadcrumb-item active">{{ page.title }}</span>
+</nav>
+<div class="card">
+    <div class="card-block">
+        <h4 class="card-title text-center">{{ page.title }}</h4>
+        <p class="card-text">{{ page.description }}</p>
+    </div>
+</div>
+{% endblock %}

@@ -12,29 +12,21 @@ class Filemanager extends Database
             while (file_exists('../upload/'.$image_name))
             {
                 $image_name = $base . rand(1, 99). rand(1, 99) . '.' . $file_ext;
-                //todo: запрос бд
-                /*$obj = new Database();
-                $query = "INSERT INTO image (name) VALUES ('".$name."')";
-                $obj->query($query);*/
             }
-            //$res = move_uploaded_file($file,'../upload/'.$name); todo: before
             $res = move_uploaded_file($image_name,'../upload/'.$image_name);
             if ($res)
             {
                 echo 'img upload';
+                return $image_name;
             }
             else
             {
-                //echo 'img DONT UPLOAD';
+                echo 'img DONT UPLOAD';
             }
         }
         else
         {
             echo 'img wrong format';
         }
-    }
-    static public function viewImage()
-    {
-
     }
 }

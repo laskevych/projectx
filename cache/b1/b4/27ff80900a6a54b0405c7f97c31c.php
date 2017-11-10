@@ -51,26 +51,25 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 \t\t\t\t<a class=\"nav-link\" href=\"http://projectx/\">Главная<span class=\"sr-only\">(current)</span></a>
 \t\t\t</li>
 \t\t\t<li class=\"nav-item\">
+\t\t\t\t<a class=\"nav-link\" href=\"http://projectx/admin\"><strong>Админ</strong></a>
+\t\t\t</li>
+\t\t\t<li class=\"nav-item\">
 \t\t\t\t<a class=\"nav-link\" href=\"http://projectx/basket/\">Корзина</a>
 \t\t\t</li>
 \t\t\t<li class=\"nav-item\">
 \t\t\t\t<a class=\"nav-link\" href=\"http://projectx/12313adasd/\">404</a>
 \t\t\t</li>
 \t\t\t<li class=\"nav-item\">
-\t\t\t\t<a class=\"nav-link disabled\" href=\"#\">О нас</a>
-\t\t\t</li>
-\t\t\t<li class=\"nav-item\">
-\t\t\t\t<a class=\"nav-link\" href=\"http://projectx/admin\"><strong>Админ панель</strong></a>
+\t\t\t\t<a class=\"nav-link\" href=\"http://projectx/dostavka\">Доставка</a>
 \t\t\t</li>
 \t\t</ul>
 \t</div>
 </nav>
-
 <div class=\"container\">
 \t";
-        // line 47
+        // line 46
         $this->displayBlock('content', $context, $blocks);
-        // line 49
+        // line 48
         echo "</div>
 
 </body>
@@ -84,10 +83,10 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
     {
     }
 
-    // line 47
+    // line 46
     public function block_content($context, array $blocks = array())
     {
-        // line 48
+        // line 47
         echo "\t";
     }
 
@@ -98,6 +97,6 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  91 => 48,  88 => 47,  83 => 4,  74 => 49,  72 => 47,  26 => 4,  21 => 1,  77 => 25,  71 => 22,  67 => 21,  53 => 14,  49 => 13,  38 => 4,  35 => 3,  29 => 2,);
+        return array (  90 => 47,  87 => 46,  82 => 4,  73 => 48,  71 => 46,  26 => 4,  21 => 1,);
     }
 }

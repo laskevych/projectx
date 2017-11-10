@@ -6,10 +6,29 @@ class ProductsUser extends Core
         $uri = parse_url($_SERVER['REQUEST_URI']);
         $url = explode('/',$uri['path']);
         $products = new Products();
-        $product = $products->getProductView($url[2]);
-        $arr = array(
-            'product' => $product,
-        );
-        return $this->view->render('product.html', $arr);
+        if ($url[2])
+        {
+            $product = $products->getProductView($url[2]);
+            if (empty($product))
+            {
+                Route::Error404();
+            }
+            else
+            {
+                $arr = array(
+                    'product' => $product,
+                );
+                return $this->view->render('products.html', $arr);
+            }
+        }
+        else
+        {
+            $products_catalog = $products->getProducts('active');
+            $arr = array(
+                'products' => $products_catalog,
+            );
+
+            return $this->view->render('products.html', $arr);
+        }
     }
 }

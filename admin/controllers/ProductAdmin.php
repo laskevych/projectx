@@ -7,13 +7,21 @@ class ProductAdmin extends CoreAdmin
         $request = new Request();
         $product = new stdClass();
 
+        $uri = parse_url($_SERVER['REQUEST_URI']);
+
+        if ($uri['query'])
+        {
+            $id = explode('=',$uri['query']);
+            echo $id[1];
+            $product = $products->getProduct($id[1]);
+        }
         if ($request->method() == 'POST' && $_POST['name'] != null)
         {
+            $product = new stdClass();
             $product->name = $request->post('name');
             $product->description = $request->post('description');
             $product->price = $request->post('price','integer');
-            self::checkImage();
-            $product->image = $_SESSION['image_name'];
+            $product->image = $request->post('image');
             $product->visible = $request->post('visible', 'integer');
             if (empty($request->post('url')))
             {
@@ -45,11 +53,11 @@ class ProductAdmin extends CoreAdmin
         );*/
 
         $arr = array(
-            'Products' => $product,
+            'product' => $product,
         );
-        /*echo "<pre>";
+        echo "<pre>";
         print_r($arr);
-        echo "</pre>";*/
+        echo "</pre>";
         return $this->view->render('admin_product.html', $arr);
     }
 }

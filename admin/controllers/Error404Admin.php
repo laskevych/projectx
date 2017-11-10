@@ -3,6 +3,7 @@ class Error404Admin extends CoreAdmin
 {
     public function fetch()
     {
+
         $arr = array(
             'products' => 404,
         );
