@@ -7,6 +7,13 @@ class PageAdmin extends CoreAdmin
         $request = new Request();
         $page = new stdClass();
 
+        $uri = parse_url($_SERVER['REQUEST_URI']);
+
+        if ($uri['query'])
+        {
+            $id = explode('=',$uri['query']);
+            $page = $pages->getPage($id[1]);
+        }
         if ($request->method() == 'POST' && $_POST['title'] != null)
         {
             $page->title = $request->post('title');

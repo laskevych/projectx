@@ -15,6 +15,8 @@ class Products extends Database
             $var_sql = implode(',', $values);
 
             $query = "INSERT INTO products ($column_sql) VALUES ($var_sql)";
+           /* echo $query;
+            echo "<br>";*/
             $this->query($query);
             return $this->resId();
         }

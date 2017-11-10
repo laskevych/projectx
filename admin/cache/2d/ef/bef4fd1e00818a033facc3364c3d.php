@@ -47,16 +47,7 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
                 <a class=\"nav-link\" href=\"http://projectx/\">Главная</a>
             </li>
             <li class=\"nav-item active\">
-                <a class=\"nav-link\" href=\"http://projectx/admin\">Админ панель</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link disabled\" href=\"#\">Каталог</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link disabled\" href=\"#\">Контакты</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link disabled\" href=\"#\">О нас</a>
+                <a class=\"nav-link\" href=\"http://projectx/admin\">Админ</a>
             </li>
         </ul>
     </div>
@@ -97,9 +88,9 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
             </div>
     </div>
     ";
-        // line 76
+        // line 67
         $this->displayBlock('content', $context, $blocks);
-        // line 79
+        // line 70
         echo "</div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
@@ -115,12 +106,12 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
     {
     }
 
-    // line 76
+    // line 67
     public function block_content($context, array $blocks = array())
     {
-        // line 77
+        // line 68
         echo "        ";
-        // line 78
+        // line 69
         echo "    ";
     }
 
@@ -131,6 +122,6 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  124 => 78,  122 => 77,  119 => 76,  114 => 4,  103 => 79,  101 => 76,  26 => 4,  21 => 1,);
+        return array (  115 => 69,  113 => 68,  110 => 67,  105 => 4,  94 => 70,  92 => 67,  26 => 4,  21 => 1,);
     }
 }

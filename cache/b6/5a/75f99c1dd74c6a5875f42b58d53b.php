@@ -38,21 +38,22 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
         echo "<div class=\"col-12 text-center\">
 \t<p class=\"display-4\">Главная</p>
 </div>
-<div class=\"card-desk row\">
+<!--Убрал на время-->
+<!--<div class=\"card-desk row\">
 \t";
-        // line 8
+        // line 9
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["products"]) ? $context["products"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 9
+            // line 10
             echo "\t<div class=\"col-3\">
 \t\t<div class=\"card\">
 \t\t\t<a href=\"http://projectx/products/";
-            // line 11
+            // line 12
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "url"), "html", null, true);
             echo "\">
 \t\t\t\t<img src=\"../../upload/";
-            // line 12
+            // line 13
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "image"), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "name"), "html", null, true);
@@ -62,13 +63,13 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
 \t\t\t</a>
 \t\t\t<div class=\"card-block\">
 \t\t\t\t<h4 class=\"card-title\">";
-            // line 15
+            // line 16
             echo twig_escape_filter($this->env, twig_slice($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "name"), 0, 25), "html", null, true);
             echo "</h4>
 \t\t\t</div>
 \t\t\t<ul class=\"list-group list-group-flush\">
 \t\t\t\t<li class=\"list-group-item\">Цена: ";
-            // line 18
+            // line 19
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "price"), "html", null, true);
             echo " грн.</li>
 \t\t\t</ul>
@@ -82,8 +83,8 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 26
-        echo "</div>
+        // line 27
+        echo "</div>-->
 ";
     }
 
@@ -99,6 +100,6 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  86 => 26,  72 => 18,  66 => 15,  56 => 12,  52 => 11,  48 => 9,  44 => 8,  38 => 4,  35 => 3,  29 => 2,);
+        return array (  87 => 27,  73 => 19,  67 => 16,  57 => 13,  53 => 12,  49 => 10,  45 => 9,  38 => 4,  35 => 3,  29 => 2,);
     }
 }

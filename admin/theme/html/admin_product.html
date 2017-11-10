@@ -21,7 +21,7 @@
                 </li>
             </ul>
         </div>
-        <form method="post" enctype="multipart/form-data">
+        <form method="post">
             <input type="hidden" name="id" value="{{ product.id }}">
             <div class="row">
                 <div class="card-block col-9 text-left">
@@ -87,18 +87,25 @@
                 <div class="card-block col-12">
                     <!--Загрузка картинки-->
                     <div class="form-group">
-                        <label for="exampleInputFile">Изображение товара</label>
+                        {% if product.image == '' %}
+                        <label for="product-image">Изображение товара</label>
                         <!--Размер изображения.-->
                         <!-- <input type="hidden" name="MAX_FILE_SIZE" value="2000000">-->
-                        <input type="file" class="form-control-file" name="image" id="exampleInputFile" aria-describedby="fileHelp">
-                        <small id="fileHelp" class="form-text text-muted">Загружайте изображение в формате .png и .jpg. Размер до 2 МБ</small>
+                        <input type="file" class="form-control-file" name="image" id="product-image" aria-describedby="product-image-help">
+                        <small id="product-image-help" class="form-text text-muted">Загружайте изображение в формате .png и .jpg. Размер до 2 МБ</small>
+                        {% else %}
+                        <p class="card-text">Изображение товара</p>
+                        <img src="../../../upload/{{ product.image }}" width="30%">
+                        <input type="file" class="form-control-file" name="image" id="product-image" aria-describedby="product-image-help">
+                        <small id="product-image-help" class="form-text text-muted">Загружайте изображение в формате .png и .jpg. Размер до 2 МБ</small>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="card-block col-12">
                     <!--Описание товара-->
                     <div class="form-group">
                         <label for="exampleTextarea">Описание товара</label>
-                        <textarea class="form-control" id="exampleTextarea" name="description" rows="3">{{ product.description }}</textarea>
+                        <textarea class="form-control" id="exampleTextarea" name="description" rows="15">{{ product.description }}</textarea>
                         <p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или "невозможных" слов.</p>
                     </div>
                 </div>

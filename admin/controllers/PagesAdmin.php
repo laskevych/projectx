@@ -13,11 +13,6 @@ class PagesAdmin extends CoreAdmin
             $id = $request->post('id');
             $pages->deletePage($id);
         }
-        elseif ($request->method() == 'POST' && $_POST['edit'])
-        {
-            $id = $request->post('id');
-            echo $id;
-        }
         $arr = array(
             'pages' => $pages_catalog,
         );

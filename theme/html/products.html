@@ -1,5 +1,10 @@
 {% extends "index.html" %}
 {% block title %}Товары{% endblock %}
+
+{# {% block header %}
+<p class="display-4">HELLO</p>
+{% endblock header %} #}
+
 {% block content %}
 <div class="p-2">
 </div>
@@ -27,7 +32,8 @@
                 <li class="list-group-item">Цена: {{ product.price }} грн.</li>
             </ul>
             <div class="card-footer">
-                <a href="#" class="btn btn-primary">Купить</a>
+                <a href="#" class="btn btn-primary btn-lg">КУПИТЬ</a>
+                <a href="#" class="btn btn-outline-primary btn-lg">КУПИТЬ В 1 КЛИК</a>
             </div>
         </div>
     </div>
@@ -51,11 +57,12 @@
                 <li class="list-group-item">Цена: {{ product.price }} грн.</li>
             </ul>
             <div class="card-footer">
-                <a href="#" class="btn btn-primary">Купить</a>
+                <a href="#" class="btn btn-primary w-100">КУПИТЬ</a>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
+{{ parent() }}
 {% endif %}
 {% endblock %}

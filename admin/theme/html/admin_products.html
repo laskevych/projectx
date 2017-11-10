@@ -22,24 +22,21 @@
                 <tr>
                     <th>ID</th>
                     <th>Фото</th>
-                    <th>Название</th>
+                    <th class="w-25">Название</th>
                     <th>Цена</th>
-                    <th>Кол-во</th>
                     <th class="text-center">Видимость</th>
                     <th class="text-center">Действия</th>
-                    <!--<th>Username</th>-->
                 </tr>
                 </thead>
                 {% for product in products %}
                 <tbody>
                 <tr>
                     <th>{{ product.id }}</th>
-                    <th>Фото</th>
+                    <th><img src="../../../upload/{{ product.image }}" width="30px"></th>
                     <!--Плохо работает-->
                     <!--<td><img src="../../../upload/{{ product.image }}" alt="" style="width: 10%" class="img-thumbnail"></td>-->
-                    <td><a href="#">{{ product.name }}</a></td>
+                    <td>{{ product.name }}</td>
                     <td>{{ product.price }} грн.</td>
-                    <td>0 шт</td>
                     <!--Видимость-->
                     <td class="text-center">
                         {% if product.visible == 0 %}
@@ -58,7 +55,7 @@
                                 <input type="submit" value="Удалить" name="delete" class="btn btn-outline-danger btn-sm">
                                 <!--<input type="submit" value="{{ product.id }}" name="id" class="btn btn-outline-warning btn-sm">-->
                                     <a href="http://projectx/admin/product/?id={{ product.id }}" class="btn btn-outline-warning btn-sm" role="button">Редактировать</a>
-                                <a href="http://projectx/" class="btn btn-outline-info btn-sm">Просмотр</a>
+                                <a href="http://projectx/products/{{ product.url }}" class="btn btn-outline-info btn-sm">Просмотр</a>
                                 <!--<input type="button" value="Просмотр" class="btn btn-outline-info btn-sm">-->
                             </div>
                         </form>

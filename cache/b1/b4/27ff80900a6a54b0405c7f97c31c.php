@@ -36,7 +36,6 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 \t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" crossorigin=\"anonymous\"></script>
 \t<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" crossorigin=\"anonymous\"></script>
 </head>
-<body>
 <nav class=\"navbar navbar-toggleable-md navbar-light bg-faded\">
 \t<button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
 \t\t<span class=\"navbar-toggler-icon\"></span>
@@ -54,22 +53,32 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 \t\t\t\t<a class=\"nav-link\" href=\"http://projectx/admin\"><strong>Админ</strong></a>
 \t\t\t</li>
 \t\t\t<li class=\"nav-item\">
+\t\t\t\t<a class=\"nav-link\"><strong>:::</strong></a>
+\t\t\t</li>
+\t\t\t<li class=\"nav-item\">
+\t\t\t<a class=\"nav-link\" href=\"http://projectx/products/\">Товары</a>
+\t\t\t</li>
+\t\t\t<li class=\"nav-item\">
 \t\t\t\t<a class=\"nav-link\" href=\"http://projectx/basket/\">Корзина</a>
 \t\t\t</li>
 \t\t\t<li class=\"nav-item\">
-\t\t\t\t<a class=\"nav-link\" href=\"http://projectx/12313adasd/\">404</a>
+\t\t\t\t<a class=\"nav-link\" href=\"http://projectx/oplata/\">Оплата</a>
 \t\t\t</li>
 \t\t\t<li class=\"nav-item\">
 \t\t\t\t<a class=\"nav-link\" href=\"http://projectx/dostavka\">Доставка</a>
 \t\t\t</li>
+\t\t\t<li class=\"nav-item\">
+\t\t\t\t<a class=\"nav-link\" href=\"http://projectx/o-nas\">О нас</a>
+\t\t\t</li>
 \t\t</ul>
 \t</div>
 </nav>
+<body>
 <div class=\"container\">
 \t";
-        // line 46
+        // line 55
         $this->displayBlock('content', $context, $blocks);
-        // line 48
+        // line 57
         echo "</div>
 
 </body>
@@ -83,10 +92,10 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
     {
     }
 
-    // line 46
+    // line 55
     public function block_content($context, array $blocks = array())
     {
-        // line 47
+        // line 56
         echo "\t";
     }
 
@@ -97,6 +106,6 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  90 => 47,  87 => 46,  82 => 4,  73 => 48,  71 => 46,  26 => 4,  21 => 1,);
+        return array (  99 => 56,  96 => 55,  91 => 4,  82 => 57,  80 => 55,  26 => 4,  21 => 1,);
     }
 }

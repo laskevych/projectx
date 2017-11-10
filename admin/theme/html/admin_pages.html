@@ -28,7 +28,6 @@
                 {% for page in pages %}
                 <tbody>
                 <tr>
-                    <!--<th>{{ page.id }}</th>-->
                     <td>{{ page.title }}</td>
                     <td>{{ page.description|slice(0,45)~'...' }}</td>
                     <!--Видимость-->
@@ -45,8 +44,8 @@
                             <div class="form-group">
                                 <input type="hidden" value="{{ page.id }}" name="id">
                                 <input type="submit" value="Удалить" name="delete" class="btn btn-outline-danger btn-sm">
-                                <input type="submit" value="Редактировать" name="edit" class="btn btn-outline-warning btn-sm">
-                                <a href="http://projectx/" class="btn btn-outline-info btn-sm">Просмотр</a>
+                                <a href="http://projectx/admin/page/?id={{ page.id }}" class="btn btn-outline-warning btn-sm" role="button">Редактировать</a>
+                                <a href="http://projectx/{{ page.url }}" class="btn btn-outline-info btn-sm">Просмотр</a>
                             </div>
                         </form>
                     </td>
