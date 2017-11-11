@@ -20,11 +20,15 @@ class ProductAdmin extends CoreAdmin
             $product->name = $request->post('name');
             $product->description = $request->post('description');
             $product->price = $request->post('price','integer');
-            $image = $request->post('image');
-            Filemanager::checkImage($image);
-            $product->image = $image;//$request->post('image');
-            echo "IMAGE: ".$product->image;
-            echo "<br>";
+            $image = $request->files('image');
+            if (empty($image['name']))
+            {
+                $product->image = 'image_stock.jpg';
+            }
+            else
+            {
+                $product->image = Filemanager::checkImage($image['name']);
+            }
             $product->visible = $request->post('visible', 'integer');
             if (empty($request->post('url')))
             {
@@ -32,7 +36,7 @@ class ProductAdmin extends CoreAdmin
             }
             else
             {
-                $request->post('url');
+                $product->url = $request->post('url');
             }
             if ($request->post('id', 'integer'))
             {

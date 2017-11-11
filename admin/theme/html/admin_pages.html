@@ -6,7 +6,7 @@
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="http://projectx/admin/pages/">Главное меню</a>
+                    <a class="nav-link active" href="/admin/pages/">Главное меню</a>
                 </li>
                 <li class="nav-item">
                     <a href="/admin/page/" class="btn btn-outline-success">Добавить</a>
@@ -17,12 +17,10 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <!--<th>ID</th>-->
                     <th>Название</th>
                     <th>Описание</th>
                     <th class="text-center">Видимость</th>
                     <th class="text-center">Действия</th>
-                    <!--<th>Username</th>-->
                 </tr>
                 </thead>
                 {% for page in pages %}
@@ -44,8 +42,8 @@
                             <div class="form-group">
                                 <input type="hidden" value="{{ page.id }}" name="id">
                                 <input type="submit" value="Удалить" name="delete" class="btn btn-outline-danger btn-sm">
-                                <a href="http://projectx/admin/page/?id={{ page.id }}" class="btn btn-outline-warning btn-sm" role="button">Редактировать</a>
-                                <a href="http://projectx/{{ page.url }}" class="btn btn-outline-info btn-sm">Просмотр</a>
+                                <a href="/admin/page/?id={{ page.id }}" class="btn btn-outline-warning btn-sm" role="button">Редактировать</a>
+                                <a href="/{{ page.url }}" class="btn btn-outline-info btn-sm">Просмотр</a>
                             </div>
                         </form>
                     </td>

@@ -10,14 +10,14 @@
 </div>
 {% if product.name %}
 <nav class="breadcrumb">
-    <a class="breadcrumb-item" href="http://projectx/">Главная</a>
-    <a class="breadcrumb-item" href="http://projectx/products/">Товары</a>
+    <a class="breadcrumb-item" href="/">Главная</a>
+    <a class="breadcrumb-item" href="/products/">Товары</a>
     <span class="breadcrumb-item active">{{ product.name }}</span>
 </nav>
 <div class="card-desk row">
     <div class="col-4">
         <div class="card">
-            <a href="http://projectx/products/{{product.url}}">
+            <a href="/products/{{product.url}}">
                 <img src="../../upload/{{ product.image }}" alt="{{ product.name }}" title="{{ product.name }}" class="card-img-top" style="width: 100%">
             </a>
         </div>
@@ -29,7 +29,7 @@
                 <p class="card-text">{{ product.description }}</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Цена: {{ product.price }} грн.</li>
+                <li class="list-group-item">Цена: {{ product.price }} <sup><span class="badge badge-pill badge-success"><del>{{ product.price +100 }}</del></span></sup> грн.</li>
             </ul>
             <div class="card-footer">
                 <a href="#" class="btn btn-primary btn-lg">КУПИТЬ</a>
@@ -40,21 +40,21 @@
 </div>
 {% else %}
 <nav class="breadcrumb">
-    <a class="breadcrumb-item" href="http://projectx/">Главная</a>
+    <a class="breadcrumb-item" href="/">Главная</a>
     <span class="breadcrumb-item active">Товары</span>
 </nav>
 <div class="card-desk row">
     {% for product in products %}
     <div class="col-3">
-        <div class="card">
-            <a href="http://projectx/products/{{product.url}}">
+        <div class="card h-100">
+            <a href="/products/{{product.url}}">
                 <img src="../../upload/{{ product.image }}" alt="{{ product.name }}" title="{{ product.name }}" class="card-img-top" style="width: 100%">
             </a>
             <div class="card-block">
-                <h4 class="card-title">{{ product.name|slice(0,25) }}</h4>
+                <h5 class="card-title"><a href="/products/{{product.url}}">{{ product.name|slice(0,25) }}</a></h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Цена: {{ product.price }} грн.</li>
+                <li class="list-group-item">Цена: {{ product.price }} <sup><span class="badge badge-pill badge-success"><del>{{ product.price +100 }}</del></span></sup> грн.</li>
             </ul>
             <div class="card-footer">
                 <a href="#" class="btn btn-primary w-100">КУПИТЬ</a>

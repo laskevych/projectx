@@ -30,73 +30,70 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
     <!-- Bootstrap CSS -->
-    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css\" integrity=\"sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ\" crossorigin=\"anonymous\">
+    <link rel=\"stylesheet\" href=\"/theme/bootstrap/css/bootstrap.min.css\">
 </head>
 <body>
 <nav class=\"navbar navbar-toggleable-md navbar-inverse bg-inverse\">
     <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
         <span class=\"navbar-toggler-icon\"></span>
     </button>
-    <a class=\"navbar-brand\" href=\"http://projectx\">
+    <a class=\"navbar-brand\" href=\"/\">
         <img src=\"http://appmirror.net/wp-content/uploads/2017/01/Project-X-Icon-Pack-1.1-200x200.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\">
         Project X
     </a>
     <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
         <ul class=\"navbar-nav\">
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"http://projectx/\">Главная</a>
+                <a class=\"nav-link\" href=\"/\">Главная</a>
             </li>
             <li class=\"nav-item active\">
-                <a class=\"nav-link\" href=\"http://projectx/admin\">Админ</a>
+                <a class=\"nav-link\" href=\"/admin\">Админ</a>
             </li>
         </ul>
     </div>
 </nav>
 
 <div class=\"container\">
-    <div class=\"w-100\">
-        <h1 class=\"w-100\"></h1>
-    </div>
-    <div class=\"row align-items-center\" style=\"height: 130px \">
+    <div class=\"row align-items-center\" style=\"height: 130px\">
         <!--Товары-->
             <div class=\"col\">
-                <a href=\"http://projectx/admin/products/\">
-                    <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/trolley/dusk/64\" title=\"Stock\" width=\"64\" height=\"64\">
+                <a href=\"/admin/products/\">
+                    <img class=\"mx-auto d-block\" src=\"/admin/theme/img/products.png\" title=\"Товары\" width=\"64\" height=\"64\">
                 </a>
                 <p class=\"text-center\">Товары</p>
             </div>
         <!--Заказы-->
             <div class=\"col\">
-                <a href=\"http://projectx/admin/orders/\">
-                    <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/deposit/dusk/64\" title=\"Deposit\" width=\"64\" height=\"64\">
+                <a href=\"/admin/orders/\">
+                    <img class=\"mx-auto d-block\" src=\"/admin/theme/img/orders.png\" title=\"Заказы\" width=\"64\" height=\"64\">
                 </a>
                 <p class=\"text-center\">Заказы<span class=\"badge badge-success\">+3</span></p>
             </div>
         <!--Страницы-->
             <div class=\"col\">
-                <a href=\"http://projectx/admin/pages/\">
-                    <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/google-docs/dusk/64\" title=\"Google Docs\" width=\"64\" height=\"64\">
+                <a href=\"/admin/pages/\">
+                    <img class=\"mx-auto d-block\" src=\"/admin/theme/img/pages.png\" title=\"Страницы\" width=\"64\" height=\"64\">
                 </a>
                 <p class=\"text-center\">Страницы</p>
             </div>
         <!--Настройки-->
             <div class=\"col\">
-                <a href=\"http://projectx/admin/settings/\">
-                    <img class=\"mx-auto d-block\" src=\"https://png.icons8.com/settings/dusk/64\" title=\"Settings\" width=\"64\" height=\"64\">
+                <a href=\"/admin/settings/\">
+                    <img class=\"mx-auto d-block\" src=\"/admin/theme/img/setting.png\" title=\"Настройки\" width=\"64\" height=\"64\">
                 </a>
                 <p class=\"text-center\">Настройки</p>
             </div>
     </div>
     ";
-        // line 67
+        // line 64
         $this->displayBlock('content', $context, $blocks);
-        // line 70
+        // line 67
         echo "</div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\" crossorigin=\"anonymous\"></script>
+<script src=\"/theme/js/jquery-3.2.1.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" crossorigin=\"anonymous\"></script>
-<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" crossorigin=\"anonymous\"></script>
+<script src=\"/theme/bootstrap/js/bootstrap.min.js\" integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" crossorigin=\"anonymous\"></script>
 </body>
 </html>";
     }
@@ -106,12 +103,12 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
     {
     }
 
-    // line 67
+    // line 64
     public function block_content($context, array $blocks = array())
     {
-        // line 68
+        // line 65
         echo "        ";
-        // line 69
+        // line 66
         echo "    ";
     }
 
@@ -122,6 +119,6 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  115 => 69,  113 => 68,  110 => 67,  105 => 4,  94 => 70,  92 => 67,  26 => 4,  21 => 1,);
+        return array (  112 => 66,  110 => 65,  107 => 64,  102 => 4,  91 => 67,  89 => 64,  26 => 4,  21 => 1,);
     }
 }

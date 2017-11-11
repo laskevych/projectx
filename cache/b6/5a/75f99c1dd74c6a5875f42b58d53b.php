@@ -48,7 +48,7 @@ class __TwigTemplate_b65a75f99c1dd74c6a5875f42b58d53b extends Twig_Template
             // line 10
             echo "\t<div class=\"col-3\">
 \t\t<div class=\"card\">
-\t\t\t<a href=\"http://projectx/products/";
+\t\t\t<a href=\"/products/";
             // line 12
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : null), "url"), "html", null, true);
             echo "\">

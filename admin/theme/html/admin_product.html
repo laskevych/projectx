@@ -5,13 +5,13 @@
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="http://projectx/admin/products/">Товары</a>
+                    <a class="nav-link" href="/admin/products/">Товары</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://projectx/admin/categories/">Категории</a>
+                    <a class="nav-link" href="/admin/categories/">Категории</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="http://projectx/admin/product/">
+                    <a class="nav-link active" href="/admin/product/">
                         {% if product.id %}
                         Редактирование товара
                         {% else %}
@@ -21,7 +21,7 @@
                 </li>
             </ul>
         </div>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="{{ product.id }}">
             <div class="row">
                 <div class="card-block col-9 text-left">

@@ -5,10 +5,10 @@
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="http://projectx/admin/products/">Товары</a>
+                    <a class="nav-link active" href="/admin/products/">Товары</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://projectx/admin/categories/">Категории</a>
+                    <a class="nav-link" href="/admin/categories/">Категории</a>
                 </li>
                 <li class="nav-item">
                     <a href="/admin/product/" class="btn btn-outline-success">Добавить</a>
@@ -16,47 +16,41 @@
             </ul>
         </div>
         <div class="card-block text-left">
-            <!--<h4 class="card-title display-7">Список товаров</h4>-->
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Фото</th>
                     <th class="w-25">Название</th>
                     <th>Цена</th>
                     <th class="text-center">Видимость</th>
+                    <th class="text-center">Хит</th>
                     <th class="text-center">Действия</th>
                 </tr>
                 </thead>
                 {% for product in products %}
                 <tbody>
                 <tr>
-                    <th>{{ product.id }}</th>
-                    <th><img src="../../../upload/{{ product.image }}" width="30px"></th>
-                    <!--Плохо работает-->
-                    <!--<td><img src="../../../upload/{{ product.image }}" alt="" style="width: 10%" class="img-thumbnail"></td>-->
+                    <th><img src="/upload/{{ product.image }}" width="30px"></th>
                     <td>{{ product.name }}</td>
                     <td>{{ product.price }} грн.</td>
                     <!--Видимость-->
                     <td class="text-center">
                         {% if product.visible == 0 %}
-                        <img src="https://png.icons8.com/invisible/dusk/33/000000" width="30px">
+                        <img src="/admin/theme/img/visible_no.png" width="30px">
                         {% else %}
-                        <img src="https://png.icons8.com/eye/dusk/33/000000" width="30px">
+                        <img src="/admin/theme/img/visible.png" width="30px">
                         {% endif %}
                     </td>
+                    <!--Топ продаж-->
+                    <td class="text-center"><img src="/admin/theme/img/hot.png" width="30px"></td>
                     <!--Действия-->
                     <td class="text-center">
                         <form action="" method="post">
                             <div class="form-group">
                                 <input type="hidden" value="{{ product.id }}" name="id">
-                                <!--Иконка для удаления товара. Узнать как сделать-->
-                                <!--<img src="https://png.icons8.com/clear-symbol/dusk/100/000000">-->
                                 <input type="submit" value="Удалить" name="delete" class="btn btn-outline-danger btn-sm">
-                                <!--<input type="submit" value="{{ product.id }}" name="id" class="btn btn-outline-warning btn-sm">-->
-                                    <a href="http://projectx/admin/product/?id={{ product.id }}" class="btn btn-outline-warning btn-sm" role="button">Редактировать</a>
-                                <a href="http://projectx/products/{{ product.url }}" class="btn btn-outline-info btn-sm">Просмотр</a>
-                                <!--<input type="button" value="Просмотр" class="btn btn-outline-info btn-sm">-->
+                                    <a href="/admin/product/?id={{ product.id }}" class="btn btn-outline-warning btn-sm" role="button">Редактировать</a>
+                                <a href="/products/{{ product.url }}" target="_blank" class="btn btn-outline-info btn-sm">Просмотр</a>
                             </div>
                         </form>
                     </td>
