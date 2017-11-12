@@ -6,23 +6,49 @@
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/admin/orders/">Новые</a>
+                    <a class="nav-link active" href="/admin/orders/?status=0">Новые</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Принятые</a>
+                    <a class="nav-link" href="/admin/orders/?status=1">Принятые</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Выполнены</a>
+                    <a class="nav-link" href="/admin/orders/?status=2">Выполнены</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Удаленые</a>
+                    <a class="nav-link" href="/admin/orders/?status=3">Удаленые</a>
                 </li>
             </ul>
         </div>
-        <div class="card-block">
-            <h4 class="card-title">Список новых заказов</h4>
-            <p class="card-text">Принимайте новые заказы</p>
-            <a href="#" class="btn btn-primary disabled">Принять</a>
+        <div class="card-block text-left">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th class="w-25">Имя</th>
+                    <th>Сумма</th>
+                    <th class="text-center">Действия</th>
+                </tr>
+                </thead>
+                {% for order in orders %}
+                <tbody>
+                <tr>
+                    <th>{{ order.id }}</th>
+                    <td>{{ order.user_name }}</td>
+                    <td>{{ order.total_price }} грн.</td>
+                    <!--Действия-->
+                    <td class="text-center">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <input type="hidden" value="{{ order.id }}" name="id">
+                                <input type="submit" value="Удалить" name="delete" class="btn btn-outline-danger btn-sm">
+                                <a href="/admin/order/?id={{ order.id }}" class="btn btn-outline-info btn-sm" role="button">Просмотр</a>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+                {% endfor %}
+            </table>
         </div>
     </div>
 </div>

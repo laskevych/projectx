@@ -1,4 +1,5 @@
 <?php
+//todo: не нужен. возможно удалю
 class Admin extends CoreAdmin
 {
     public function fetch()

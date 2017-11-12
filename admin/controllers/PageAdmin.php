@@ -25,7 +25,7 @@ class PageAdmin extends CoreAdmin
             }
             else
             {
-                $request->post('url');
+                $page->url = $request->post('url');
             }
             if ($request->post('id', 'integer'))
             {

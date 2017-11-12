@@ -15,6 +15,25 @@ class CoreAdmin
             'cache'       => 'cache',
             'auto_reload' => true
         ));
+
+        $twig->addFunction('viewTree', new Twig_Function_Function('viewTree'));
+        function viewTree($categories)
+        {
+            if ($categories)
+            {
+                echo "<ol>";
+                foreach ($categories as $category)
+                {
+                    echo "<li>".$category['name']."</li>";
+                    if (isset($category['subcategories']))
+                    {
+                        viewTree($category['subcategories']);
+                    }
+                }
+                echo "</ol>";
+            }
+        }
+
         $this->view = $twig;
     }
     static public function translit($text)
@@ -27,41 +46,7 @@ class CoreAdmin
         $res = strtolower($res);
         return $res;
     }
-    static public function checkImage()
-    {
-        $ext = array('png','jpg');
-        $name = $_FILES['image']['name'];
-        $file = $_FILES['image']['tmp_name'];
-        /*echo $_FILES['image'];
-        echo "<br>";
-        echo $file;
-        echo "<br>";*/
-        $file_ext = pathinfo($name,PATHINFO_EXTENSION);
-        $base = pathinfo($name, PATHINFO_FILENAME);
-        if(in_array($file_ext,$ext))
-        {
-            while (file_exists('../upload/'.$name))
-            {
-                $name = $base . rand(1, 50) . '.' . $file_ext;
-                $_SESSION['image_name'] = $name;
-                //echo "file: ".$_SESSION['image_name'];
-            }
-            $_SESSION['image_name'] = $name;
-            $res = move_uploaded_file($file,'../upload/'.$name);
-            if ($res)
-            {
-                //echo 'img upload';
-            }
-            else
-            {
-                //echo 'img DONT UPLOAD';
-            }
-        }
-        else
-        {
-            echo 'img wrong format';
-        }
-    }
+
     static public function makeTree($categories, $parent_id = 0)
     {
         $results = array();
@@ -83,7 +68,7 @@ class CoreAdmin
         }
         return $results;
     }
-    //не знаю как вставить в Twig
+
     static public function viewTree($categories)
     {
         if ($categories)
@@ -94,7 +79,7 @@ class CoreAdmin
                 echo "<label class=\"btn btn-primary\"><input type=\"radio\"><li>".$category['name']."</li></label>";
                 if (isset($category['subcategories']))
                 {
-                    viewCategories($category['subcategories']);
+                    //viewTree($category['subcategories']);
                 }
             }
             echo "</ol>";

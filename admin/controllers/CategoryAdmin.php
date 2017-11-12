@@ -11,10 +11,7 @@ class CategoryAdmin extends CoreAdmin
         if ($request->method() == 'POST')
         {
             $category->name = $request->post('name');
-            $category->description = $request->post('description');
             $category->visible = $request->post('visible', 'integer');
-            self::checkImage();
-            $category->image = $_SESSION['image_name'];
             $category->parent_id = $request->post('parent_id','integer');
             if (empty($request->post('url')))
             {
@@ -22,9 +19,11 @@ class CategoryAdmin extends CoreAdmin
             }
             else
             {
-                $request->post('url');
+                $category->url = $request->post('url');
             }
             $categories->addCategory($category);
+
+
             //todo: еще одна проверка (if) на обновление категории
 
         }

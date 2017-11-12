@@ -12,7 +12,7 @@ class ProductAdmin extends CoreAdmin
         if ($uri['query'])
         {
             $id = explode('=',$uri['query']);
-            $product = $products->getProduct($id[1]);
+            $product = $products->getProduct($id[1],'id');
         }
         if ($request->method() == 'POST' && $_POST['name'] != null)
         {
@@ -30,13 +30,19 @@ class ProductAdmin extends CoreAdmin
                 $product->image = Filemanager::checkImage($image['name']);
             }
             $product->visible = $request->post('visible', 'integer');
+
             if (empty($request->post('url')))
             {
                 $product->url = CoreAdmin::translit($request->post('name'));
+                $all_url = $products->getProduct($product->url,'url');
+                if ($all_url != null)
+                {
+                    $product->url = $product->url.mt_rand(1,10000);
+                }
             }
             else
             {
-                $product->url = $request->post('url');
+                $product->url = CoreAdmin::translit($request->post('url'));
             }
             if ($request->post('id', 'integer'))
             {
@@ -48,8 +54,7 @@ class ProductAdmin extends CoreAdmin
                 //Добавление товара
                 $id = $products->addProduct($product);
             }
-            $product = $products->getProduct($id);
-            //print_r($product);
+            $product = $products->getProduct($id,'id');
         }
 
         //todo: вывод категорий
@@ -62,9 +67,7 @@ class ProductAdmin extends CoreAdmin
         $arr = array(
             'product' => $product,
         );
-        /*echo "<pre>";
-        print_r($arr);
-        echo "</pre>";*/
+
         return $this->view->render('admin_product.html', $arr);
     }
 }

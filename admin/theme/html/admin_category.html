@@ -16,9 +16,6 @@
             </li>
         </ul>
     </div>
-    <!--<div class="w-100">
-        <p class="display-4">Добавление товара</p>
-    </div>-->
     <form method="post" enctype="multipart/form-data">
         <!--<input type="hidden" name="id" value="{{ product.id }}">-->
         <div class="row">
@@ -72,27 +69,9 @@
                 </div>
             </div>
             <div class="card-block col-12">
-                <!--Загрузка картинки-->
-                <div class="form-group">
-                    <label for="category-image">Изображение категории</label>
-                    <!-- <input type="hidden" name="MAX_FILE_SIZE" value="2000000">-->
-                    <input type="file" class="form-control-file" name="image" id="category-image" aria-describedby="fileHelp">
-                    <small id="fileHelp" class="form-text text-muted">Загружайте изображение в формате .png и .jpg. Размер до 2 МБ</small>
-                </div>
-            </div>
-            <div class="card-block col-12">
-                <!--Описание категории-->
-                <div class="form-group">
-                    <label for="category-textArea">Описание категории</label>
-                    <textarea class="form-control" id="category-textArea" name="description" rows="3"></textarea>
-                </div>
-            </div>
-            <div class="card-block col-12">
                 <input type="submit" class="btn btn-success col-12" value="Добавить">
             </div>
-        </div> <!--ROW-->
-
+        </div>
     </form>
 </div>
-<!--</div>-->
 {% endblock %}

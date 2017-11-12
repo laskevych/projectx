@@ -1,8 +1,9 @@
 {% extends "index.html" %}
 {% block title %}Корзина{% endblock %}
 {% block content %}
+{% if products %}
 <div class="col-12">
-    <p class="display-4">Корзина</p>
+    <p class="display-4 text-center">Корзина</p>
 </div>
 <div id="accordion" role="tablist" aria-multiselectable="true">
     <div class="card">
@@ -18,20 +19,37 @@
             <div class="card-block">
                 <div class="card">
                     <div class="card-block col-12 row align-items-center">
-                        <div class="col-3">
+                        <div class="col-2">
                             <a href="/{{product.url}}">
                                 <img src="../../upload/{{ product.image }}" alt="{{ product.name }}" title="{{ product.name }}" style="width: 35%">
                             </a>
                         </div>
-                        <div class="col-3">{{ product.name }}</div>
-                        <div class="col-2">Количество</div>
-                        <div class="col-2">{{ product.price }}</div>
-                        <div class="col-2"><button type="button" class="btn btn-danger">Удаление</button></div>
+                        <div class="col-4 text-left">{{ product.name }}</div>
+                        <div class="col-1">{{ product.amount }} шт.</div>
+                        <div class="col-1"><strong>X</strong></div>
+                        <div class="col-2">{{ product.price * product.amount }} грн.</div>
+                        <div class="col-2">
+                            <form action="" method="post">
+                                <input type="hidden" name="id" value="{{ product.id }}">
+                                <input type="submit" class="btn btn-outline-danger" value="Удалить">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
             {% endfor %}
-            <!--<p>Сумма заказа?</p>-->
+            <div class="card-block">
+                <div class="card">
+                    <div class="card-block col-12 row">
+                        <div class="col-6">СУММА</div>
+                        <div class="col-6">
+                            <form action="" method="post">
+                                <input type="submit" name="clear-basket" class="btn btn-danger w-100" value="Очистить корзину">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="card">
@@ -47,31 +65,31 @@
                 <div class="card">
                     <div class="card-block">
                         <form action="" method="post">
-                            <div class="form-group">
-                                <!--Имя-->
-                                <label for="orderName">Имя</label>
-                                <input type="text" class="form-control form-control-sm" name="user_name" id="orderName">
-                                <!--Фамилия-->
-                                <label for="orderLastName">Фамилия</label>
-                                <input type="text" class="form-control form-control-sm" name="user_lastname" id="orderLastName">
-                                <!--Телефон-->
-                                <label for="orderPhone">Телефон</label>
-                                <input type="phone" class="form-control form-control-sm" name="name" id="orderPhone">
-                                <!--Email-->
-                                <label for="orderEmail">Email</label>
-                                <input type="email" class="form-control form-control-sm" name="user_email" id="orderEmail">
-                                <!--Город-->
-                                <label for="orderAddress">Город</label>
-                                <input type="text" class="form-control form-control-sm" name="user_address" id="orderAddress">
-                                <!--Комментарий к заказу-->
-                                <label for="orderComment">Комментарий к заказу</label>
-                                <textarea class="form-control" id="orderComment" name="user_comment" rows="2"></textarea>
-                                <p>mum  достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором.
-                                    Он использует словарь из более
-                                    чем 200 латинских слов, а также набор моделей предложений. В резу
-                                    льтате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет по
-                                    вторяющихся абзацей или "невозможных" слов.</p>
-                            </div>
+                                <div class="form-group">
+                                    <!--Имя-->
+                                    <label for="orderName">Имя</label>
+                                    <input type="text" class="form-control form-control-sm" name="user_name" id="orderName">
+                                    <!--Фамилия-->
+                                    <!--<label for="orderLastName">Фамилия</label>
+                                    <input type="text" class="form-control form-control-sm" name="user_lastname" id="orderLastName">-->
+                                    <!--Телефон-->
+                                    <label for="orderPhone">Телефон</label>
+                                    <input type="phone" class="form-control form-control-sm" name="name" id="orderPhone">
+                                    <!--Email-->
+                                    <label for="orderEmail">Email</label>
+                                    <input type="email" class="form-control form-control-sm" name="user_email" id="orderEmail">
+                                    <!--Город-->
+                                    <label for="orderAddress">Город</label>
+                                    <input type="text" class="form-control form-control-sm" name="user_address" id="orderAddress">
+                                    <!--Комментарий к заказу-->
+                                    <label for="orderComment">Комментарий к заказу</label>
+                                    <textarea class="form-control" id="orderComment" name="user_comment" rows="2"></textarea>
+                                    <p>mum  достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором.
+                                        Он использует словарь из более
+                                        чем 200 латинских слов, а также набор моделей предложений. В резу
+                                        льтате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет по
+                                        вторяющихся абзацей или "невозможных" слов.</p>
+                                </div>
                         </form>
                     </div>
                 </div>
@@ -88,9 +106,21 @@
         </div>
         <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
             <div class="card-block">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                <button class="btn btn-outline-primary w-100">ОФОРМИТЬ</button>
             </div>
         </div>
     </div>
 </div>
+{% else %}
+<div class="p-2">
+</div>
+<div class="card text-center h-100">
+    <div class="card-block">
+        <h1 class="card-title display-1">Корзина пуста =(</h1>
+        <h2 class="card-subtitle text-muted">Друг, выбери себе что-то из каталога товаров</h2>
+        <a href="/products/" class="card-link">Перейти на страницу товаров</a>
+    </div>
+</div>
+{% endif %}
+
 {% endblock %}

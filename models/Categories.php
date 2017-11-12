@@ -33,14 +33,14 @@ class Categories extends Database
         }
         else
         {
-            $q = "SELECT id, parent_id, name, description, url, image, visible FROM categories WHERE id = $id LIMIT 1";
+            $q = "SELECT id, parent_id, name, url, visible FROM categories WHERE id = $id LIMIT 1";
             $this->query($q);
             return $this->result();
         }
     }
     public function getCategories()
     {
-        $q = "SELECT id, parent_id, name, description, url, image, visible FROM categories";
+        $q = "SELECT id, parent_id, name, url, visible FROM categories";
         $this->query($q);
         return $this->results();
     }

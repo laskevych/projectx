@@ -32,9 +32,46 @@
                 <li class="list-group-item">Цена: {{ product.price }} <sup><span class="badge badge-pill badge-success"><del>{{ product.price +100 }}</del></span></sup> грн.</li>
             </ul>
             <div class="card-footer">
-                <a href="#" class="btn btn-primary btn-lg">КУПИТЬ</a>
-                <a href="#" class="btn btn-outline-primary btn-lg">КУПИТЬ В 1 КЛИК</a>
-            </div>
+                <form action="" method="post">
+                    <input type="hidden" name="id" value="{{ product.id }}">
+                    <button type="submit" class="btn btn-primary btn-lg">КУПИТЬ</button>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#exampleModalLong">
+                        КУПИТЬ В 1 КЛИК
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">ЗАКАЗ В 1 КЛИК</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-header">
+                                    <p class="text-muted">Укажите свои данные и менеджер свяжется с вами в ближайшее время.</p>
+                                </div>
+                                <form action="" method="post">
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <!--Имя-->
+                                            <label for="orderName">Имя</label>
+                                            <input type="text" name="fast_user_name" class="form-control" id="orderName" placeholder="Ваше имя">
+                                            <label for="orderPhone">Телефон</label>
+                                            <input type="text" name="fast_user_phone" class="form-control" id="orderPhone" placeholder="Ваш телефон">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="hidden" name="id" value="{{ product.id }}">
+                                        <button type="submit" class="btn btn-primary w-100">ОТПРАВИТЬ ЗАКАЗ</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </form>
         </div>
     </div>
 </div>
@@ -57,7 +94,14 @@
                 <li class="list-group-item">Цена: {{ product.price }} <sup><span class="badge badge-pill badge-success"><del>{{ product.price +100 }}</del></span></sup> грн.</li>
             </ul>
             <div class="card-footer">
-                <a href="#" class="btn btn-primary w-100">КУПИТЬ</a>
+                <form action="" method="post">
+                    <input type="hidden" name="id" value="{{ product.id }}">
+                    <input type="hidden" name="name" value="{{ product.name }}">
+                    <input type="hidden" name="price" value="{{ product.price }}">
+                    <input type="hidden" name="image" value="{{ product.image }}">
+                    <input type="hidden" name="click" value="1">
+                    <input type="submit" class="btn btn-primary w-100" value="КУПИТЬ">
+                </form>
             </div>
         </div>
     </div>

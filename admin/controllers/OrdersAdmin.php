@@ -1,14 +1,27 @@
 <?php
-require_once '../models/Database.php';
 
 class OrdersAdmin extends CoreAdmin
 {
     public function fetch()
     {
-        $obj = new Database();
-        $q = "SELECT * FROM books";
-        $obj->query($q);
-        $res = $obj->results();
-        return $this->view->render('admin_orders.html', array('books' => $res));
+        $orders = new Orders();
+        $request = new Request();
+
+        $uri = parse_url($_SERVER['REQUEST_URI']);
+
+        if ($uri['query'])
+        {
+            $status = explode('=',$uri['query']);
+            $orders_catalog = $orders->getOrders($status[1]);
+        }
+        else
+        {
+            $orders_catalog = $orders->getOrders();
+        }
+        $arr = array(
+            'orders' => $orders_catalog,
+        );
+        print_r($arr);
+        return $this->view->render('admin_orders.html', $arr);
     }
 }

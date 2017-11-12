@@ -2,6 +2,7 @@
 
 class Filemanager extends Database
 {
+    //TODO: Закодить ошибки
     static public function checkImage($image_name)
     {
         if (preg_match('/([^\s]+(?=\.(jpg|png))\.\2)$/', $image_name))

@@ -37,8 +37,8 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 \t\t<span class=\"navbar-toggler-icon\"></span>
 \t</button>
 \t<a class=\"navbar-brand\" href=\"/\">
-\t\t<img src=\"http://appmirror.net/wp-content/uploads/2017/01/Project-X-Icon-Pack-1.1-200x200.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\">
-\t\tProject X
+\t\t<img src=\"/theme/img/logo.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\">
+\t\tIdea CMS
 \t</a>
 \t<div class=\"collapse navbar-collapse\" id=\"navbarNav\">
 \t\t<ul class=\"navbar-nav\">
@@ -70,23 +70,19 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 \t</div>
 </nav>
 <body>
+
 <div class=\"container\">
 \t";
-        // line 51
+        // line 52
         $this->displayBlock('content', $context, $blocks);
-        // line 53
+        // line 54
         echo "</div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script type=\"text/javascript\" src=\"/theme/js/jquery-3.2.1.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" crossorigin=\"anonymous\"></script>
 <script type=\"text/javascript\" src=\"/theme/bootstrap/js/bootstrap.min.js\"></script>
-<!--<script>
-\t\$(function () {
-\t    alert('jelll');
-    });
-    console.log();
-</script>-->
+<script type=\"text/javascript\" src=\"/theme/js/my-js.js\"></script>
 </body>
 </html>
 
@@ -98,10 +94,10 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
     {
     }
 
-    // line 51
+    // line 52
     public function block_content($context, array $blocks = array())
     {
-        // line 52
+        // line 53
         echo "\t";
     }
 
@@ -112,6 +108,6 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  105 => 52,  102 => 51,  97 => 4,  78 => 53,  76 => 51,  26 => 4,  21 => 1,);
+        return array (  101 => 53,  98 => 52,  93 => 4,  79 => 54,  77 => 52,  26 => 4,  21 => 1,);
     }
 }

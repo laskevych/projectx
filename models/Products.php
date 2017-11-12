@@ -15,55 +15,71 @@ class Products extends Database
             $var_sql = implode(',', $values);
 
             $query = "INSERT INTO products ($column_sql) VALUES ($var_sql)";
-           /* echo $query;
-            echo "<br>";*/
             $this->query($query);
             return $this->resId();
         }
     }
 
-    public function getProduct($id)
+    public function getProduct($var, $type)
     {
-        if (empty($id)) {
-            return false;
-        } else {
-            $query = "SELECT id,name,description,url,visible,image,price FROM products WHERE id = $id LIMIT 1 ";
-            $this->query($query);
-            return $this->result();
-        }
-    }
-    public function getProductView($url)
-    {
-        if (empty($url))
+        if ($type == 'id')
         {
-            return false;
+            if (empty($var)) {
+                return false;
+            } else {
+                $query = "SELECT id,name,description,url,visible,image,price FROM products WHERE id = $var LIMIT 1 ";
+                $this->query($query);
+                return $this->result();
+            }
         }
-        else
+
+        if ($type == 'url')
         {
-            $query = "SELECT id,name,description,url,image,price,visible FROM products WHERE url = '".$url."' LIMIT 1";
-            $this->query($query);
-            return $this->result();
+            if (empty($var))
+            {
+                return false;
+            }
+            else
+            {
+                $query = "SELECT id,name,description,url,image,price,visible FROM products WHERE url = '".$var."' LIMIT 1";
+                $this->query($query);
+                return $this->result();
+            }
         }
+
     }
 
-    //Отображение товаров. Три режима отображения.
-    public function getProducts($visible)
+    //Отображение товаров. Три режима отображения. Вывод по ID.
+    public function getProducts($visible = null, $id = null)
     {
-        if ($visible == 'active')
+        if (empty($id))
         {
-            $query = "SELECT id,name, description, url, visible,image,price FROM products WHERE visible = 1";
-            $this->query($query);
-            return $this->results();
-        }
-        elseif ($visible == 'disabled')
-        {
-            $query = "SELECT id,name, description, url, visible,image,price FROM products WHERE visible = 0";
-            $this->query($query);
-            return $this->results();
+            if ($visible == 'active')
+            {
+                $query = "SELECT id,name, description, url, visible,image,price FROM products WHERE visible = 1";
+                $this->query($query);
+                return $this->results();
+            }
+            elseif ($visible == 'disabled')
+            {
+                $query = "SELECT id,name, description, url, visible,image,price FROM products WHERE visible = 0";
+                $this->query($query);
+                return $this->results();
+            }
+            elseif ($visible == 'all')
+            {
+                $query = "SELECT id,name, description, url, visible,image,price FROM products";
+                $this->query($query);
+                return $this->results();
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
-            $query = "SELECT id,name, description, url, visible,image,price FROM products";
+            $query = "SELECT id, name, description, url, visible, image, price FROM products WHERE id IN ($id)";
             $this->query($query);
             return $this->results();
         }
@@ -95,6 +111,7 @@ class Products extends Database
         {
             $query = "DELETE FROM products WHERE products.id = '".$id."'";
             $this->query($query);
+            return $id;
         }
     }
 }

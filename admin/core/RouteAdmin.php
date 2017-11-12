@@ -9,7 +9,7 @@ class RouteAdmin
         $uri = parse_url($_SERVER['REQUEST_URI']);
 
         $uri_array = array(
-            '/admin/' => 'Admin',
+            '/admin/' => 'ProductsAdmin',
             '/admin/products/' => 'ProductsAdmin',
             '/admin/product/' => 'ProductAdmin',
             '/admin/categories/' => 'CategoriesAdmin',
