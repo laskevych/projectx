@@ -8,7 +8,7 @@ class Error404 extends Core
         $pages = new Pages();
         if ($url[1])
         {
-            $page = $pages->getPagesView($url[1]);
+            $page = $pages->getPage($url[1],'url');
             if (empty($page))
             {
                 $arr = array(

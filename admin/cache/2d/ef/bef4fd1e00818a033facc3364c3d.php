@@ -39,7 +39,7 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
     </button>
     <a class=\"navbar-brand\" href=\"/\">
         <img src=\"/theme/img/logo.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\">
-        Idea CMS
+        Project X
     </a>
     <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
         <ul class=\"navbar-nav\">
@@ -67,7 +67,7 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
                 <a href=\"/admin/orders/?status=0\">
                     <img class=\"mx-auto d-block\" src=\"/admin/theme/img/orders.png\" title=\"Заказы\" width=\"64\" height=\"64\">
                 </a>
-                <p class=\"text-center\">Заказы<span class=\"badge badge-success\">+3</span></p>
+                <p class=\"text-center\">Заказы</p>
             </div>
         <!--Страницы-->
             <div class=\"col\">
@@ -119,6 +119,6 @@ class __TwigTemplate_2defbef4fd1e00818a033facc3364c3d extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  112 => 66,  110 => 65,  107 => 64,  102 => 4,  91 => 67,  89 => 64,  26 => 4,  21 => 1,  38 => 4,  35 => 3,  29 => 2,);
+        return array (  112 => 66,  110 => 65,  107 => 64,  102 => 4,  91 => 67,  89 => 64,  26 => 4,  21 => 1,);
     }
 }

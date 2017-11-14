@@ -15,6 +15,7 @@ class RouteAdmin
             '/admin/categories/' => 'CategoriesAdmin',
             '/admin/category/' => 'CategoryAdmin',
             '/admin/orders/' => 'OrdersAdmin',
+            '/admin/order/' => 'OrderAdmin',
             '/admin/pages/' => 'PagesAdmin',
             '/admin/page/' => 'PageAdmin',
             '/admin/settings/' => 'SettingsAdmin',

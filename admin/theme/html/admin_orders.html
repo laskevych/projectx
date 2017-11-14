@@ -4,18 +4,27 @@
 <div class="col-12">
     <div class="card text-center">
         <div class="card-header">
+            {% if status == 0 %}
+            {% set link_0 = 'active' %}
+            {% elseif status == 1 %}
+            {% set link_1 = 'active' %}
+            {% elseif status == 2 %}
+            {% set link_2 = 'active' %}
+            {% elseif status == 3 %}
+            {% set link_3 = 'active' %}
+            {% endif %}
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/admin/orders/?status=0">Новые</a>
+                    <a class="nav-link {{ link_0 }}" href="/admin/orders/?status=0">Новые</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/orders/?status=1">Принятые</a>
+                    <a class="nav-link {{ link_1 }}" href="/admin/orders/?status=1">Принятые</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/orders/?status=2">Выполнены</a>
+                    <a class="nav-link {{ link_2 }}" href="/admin/orders/?status=2">Выполнены</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/orders/?status=3">Удаленые</a>
+                    <a class="nav-link {{ link_3 }}" href="/admin/orders/?status=3">Удаленые</a>
                 </li>
             </ul>
         </div>
@@ -26,6 +35,7 @@
                     <th>#</th>
                     <th class="w-25">Имя</th>
                     <th>Сумма</th>
+                    <th>Дата создания</th>
                     <th class="text-center">Действия</th>
                 </tr>
                 </thead>
@@ -35,12 +45,14 @@
                     <th>{{ order.id }}</th>
                     <td>{{ order.user_name }}</td>
                     <td>{{ order.total_price }} грн.</td>
+                    <td>{{ order.created }}</td>
                     <!--Действия-->
                     <td class="text-center">
                         <form action="" method="post">
                             <div class="form-group">
-                                <input type="hidden" value="{{ order.id }}" name="id">
-                                <input type="submit" value="Удалить" name="delete" class="btn btn-outline-danger btn-sm">
+                                <!--Удаление заказа. Отказался-->
+                                <!--<input type="hidden" value="{{ order.id }}" name="id">
+                                <input type="submit" value="Удалить" name="delete" class="btn btn-outline-danger btn-sm">-->
                                 <a href="/admin/order/?id={{ order.id }}" class="btn btn-outline-info btn-sm" role="button">Просмотр</a>
                             </div>
                         </form>

@@ -1,0 +1,69 @@
+{% extends "index.html" %}
+{% block title %}Заказ №{{ order.id }}{% endblock %}
+{% block content %}
+<div class="card text-center">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/orders/?status=0">Новые</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/orders/?status=1">Принятые</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/orders/?status=2">Выполнены</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/orders/?status=3">Удаленые</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/admin/order/?id={{ order.id }}">Просмотр заказа №{{ order.id }}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-block row">
+        <div class="card-block col-4">
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Заказ: №{{ order.id }}</strong></li>
+                <li class="list-group-item">Имя: {{ order.user_name }}</li>
+                <li class="list-group-item">Телефон: {{ order.user_phone }}</li>
+                <li class="list-group-item">Email: {{ order.user_email }}</li>
+                <li class="list-group-item">Город: {{ order.user_address }}</li>
+                <li class="list-group-item">{{ order.user_comment }}</li>
+                <li class="list-group-item"><strong>Сумма: {{ order.total_price }} грн.</strong></li>
+                {% if order.order_status == 0 %}
+                <li class="list-group-item list-group-item-warning">Статус: Новый</li>
+                {% elseif order.order_status == 1 %}
+                <li class="list-group-item list-group-item-info">Статус: Принят</li>
+                {% elseif order.order_status == 2 %}
+                <li class="list-group-item list-group-item-success">Статус: Выполнен</li>
+                {% elseif order.order_status == 3 %}
+                <li class="list-group-item list-group-item-danger">Статус: Отменен</li>
+                {% endif %}
+                <li class="list-group-item">
+                    <form action="" method="post" class="form-inline">
+                        <select name="order_status" id="order_status" class="custom-select">
+                            <option selected>Выберите статус</option>
+                            <option value="0">Новый</option>
+                            <option value="1">Принят</option>
+                            <option value="2">Выполнен</option>
+                            <option value="3">Отменен</option>
+                        </select>
+                        <input type="hidden" name="order_id" value="{{ order.id }}">
+                        <input type="submit" class="btn btn-outline-primary" value="Изменить">
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="card-block row col-8">
+            {% for product in order_products %}
+            <ul class="list-group col-4">
+                <li class="list-group-item"><a target="_blank" href="/admin/product/?id={{ product.product_id }}">{{ product.product_name }}</a></li>
+                <li class="list-group-item">Количество: {{ product.product_amount }} шт.</li>
+                <li class="list-group-item">Цена 1 шт.: {{ product.product_price }} грн.</li>
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

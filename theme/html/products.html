@@ -34,7 +34,14 @@
             <div class="card-footer">
                 <form action="" method="post">
                     <input type="hidden" name="id" value="{{ product.id }}">
-                    <button type="submit" class="btn btn-primary btn-lg">КУПИТЬ</button>
+                    <input type="hidden" name="name" value="{{ product.name }}">
+                    <input type="hidden" name="price" value="{{ product.price }}">
+                    <input type="hidden" name="image" value="{{ product.image }}">
+                    <input type="hidden" name="url" value="{{ product.url }}">
+                    <input type="hidden" name="click" value="1">
+                    <input type="submit" class="btn btn-primary btn-lg" value="КУПИТЬ">
+
+
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#exampleModalLong">
                         КУПИТЬ В 1 КЛИК
@@ -65,13 +72,14 @@
                                     </div>
                                     <div class="modal-footer">
                                         <input type="hidden" name="id" value="{{ product.id }}">
-                                        <button type="submit" class="btn btn-primary w-100">ОТПРАВИТЬ ЗАКАЗ</button>
+                                        <button type="submit" name="fast-buy" class="btn btn-primary w-100">ОТПРАВИТЬ ЗАКАЗ</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </form>
+            </div>
         </div>
     </div>
 </div>
@@ -88,7 +96,7 @@
                 <img src="../../upload/{{ product.image }}" alt="{{ product.name }}" title="{{ product.name }}" class="card-img-top" style="width: 100%">
             </a>
             <div class="card-block">
-                <h5 class="card-title"><a href="/products/{{product.url}}">{{ product.name|slice(0,25) }}</a></h5>
+                <h5 class="card-title"><a href="/products/{{ product.url }}">{{ product.name|slice(0,25) }}</a></h5>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Цена: {{ product.price }} <sup><span class="badge badge-pill badge-success"><del>{{ product.price +100 }}</del></span></sup> грн.</li>
@@ -99,6 +107,7 @@
                     <input type="hidden" name="name" value="{{ product.name }}">
                     <input type="hidden" name="price" value="{{ product.price }}">
                     <input type="hidden" name="image" value="{{ product.image }}">
+                    <input type="hidden" name="url" value="{{ product.url }}">
                     <input type="hidden" name="click" value="1">
                     <input type="submit" class="btn btn-primary w-100" value="КУПИТЬ">
                 </form>
@@ -107,6 +116,6 @@
     </div>
     {% endfor %}
 </div>
-{{ parent() }}
+{# parent() #}
 {% endif %}
 {% endblock %}

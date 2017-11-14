@@ -13,15 +13,16 @@ class ProductsUser extends Core
             $name = $request->post('name');
             $price = $request->post('price');
             $image = $request->post('image');
+            $url = $request->post('url');
             $_SESSION['order'][$id]['id'] = $id;
             $_SESSION['order'][$id]['name'] = $name;
             $_SESSION['order'][$id]['amount'] += $amount;
             $_SESSION['order'][$id]['price'] = $price;
             $_SESSION['order'][$id]['image'] = $image;
+            $_SESSION['order'][$id]['url'] = $url;
 
             //TODO: КОЛИЧЕСТВО ТОВАРОВ В КОРЗИНЕ. РЕАЛИЗОВАТЬ ТАК
             //echo count($_SESSION['order']);
-
         }
 
         $uri = parse_url($_SERVER['REQUEST_URI']);

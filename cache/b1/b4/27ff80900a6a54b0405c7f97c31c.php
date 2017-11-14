@@ -38,7 +38,7 @@ class __TwigTemplate_b1b427ff80900a6a54b0405c7f97c31c extends Twig_Template
 \t</button>
 \t<a class=\"navbar-brand\" href=\"/\">
 \t\t<img src=\"/theme/img/logo.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\">
-\t\tIdea CMS
+\t\tProject X
 \t</a>
 \t<div class=\"collapse navbar-collapse\" id=\"navbarNav\">
 \t\t<ul class=\"navbar-nav\">

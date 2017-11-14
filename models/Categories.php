@@ -1,6 +1,9 @@
 <?php
+
 class Categories extends Database
 {
+
+    //Добавление категории
     public function addCategory($category)
     {
         if (empty($category))
@@ -25,7 +28,9 @@ class Categories extends Database
             //todo: resID
         }
     }
-    public function getCategory()
+
+    //Получение категории
+    public function getCategory($id)
     {
         if (empty($id))
         {
@@ -38,6 +43,8 @@ class Categories extends Database
             return $this->result();
         }
     }
+
+    //Получение категорий
     public function getCategories()
     {
         $q = "SELECT id, parent_id, name, url, visible FROM categories";

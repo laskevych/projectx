@@ -1,9 +1,8 @@
 <?php
+
 class Database
 {
-    /**************************************
-     * Работа с БД
-     **************************************/
+
     private $mysqli;
     private $res;
 
@@ -36,9 +35,9 @@ class Database
         }
 
     }
+
     public function results()
     {
-        //print_r($this->mysqli);
         $this->mysqli->errno;
         $this->mysqli->error;
         while ($res = $this->res->fetch_assoc()) {
@@ -50,6 +49,8 @@ class Database
 
         return $this->res->fetch_assoc();
     }
+
+    //Получаем ID последней записи
     public function resId()
     {
         return $this->mysqli->insert_id;

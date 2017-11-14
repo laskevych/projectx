@@ -1,6 +1,7 @@
 <?php
 class Pages extends Database
 {
+    //Добавление страницы
     public function addPage($page)
     {
         if(empty($page))
@@ -23,33 +24,39 @@ class Pages extends Database
             return $this->resId();
         }
     }
-    public function getPage($id)
+
+    //Получение товара по ссылке для клиентской части и по id для админ панели.
+    public function getPage($var,$type)
     {
-        if (empty($id))
+        if ($type == 'id')
         {
-            return false;
+            if (empty($var))
+            {
+                return false;
+            }
+            else
+            {
+                $query = "SELECT id,title, description, url, visible FROM pages WHERE id = $var LIMIT 1";
+                $this->query($query);
+                return $this->result();
+            }
         }
-        else
+        if ($type == 'url')
         {
-            $query = "SELECT id,title, description, url, visible FROM pages WHERE id = $id LIMIT 1";
-            $this->query($query);
-            return $this->result();
+            if (empty($var))
+            {
+                return false;
+            }
+            else
+            {
+                $query = "SELECT id,title, description, url, visible FROM pages WHERE url ='".$var."' LIMIT 1";
+                $this->query($query);
+                return $this->result();
+            }
         }
     }
-    public function getPagesView($url)
-    {
-        if (empty($url))
-        {
-            return false;
-        }
-        else
-        {
-            $query = "SELECT id,title,description,url,visible FROM pages WHERE url = '".$url."' LIMIT 1";
-            $this->query($query);
-            return $this->result();
-        }
-    }
-    //Отображение страниц. Три режима отображения.
+
+    //Получение страниц. Три режима отображения.
     public function getPages($visible)
     {
         if ($visible == 'active')
@@ -72,6 +79,7 @@ class Pages extends Database
         }
     }
 
+    //Обновление страницы
     public function updatePage($id, $page)
     {
         if (empty($id)) {
@@ -88,6 +96,7 @@ class Pages extends Database
         }
     }
 
+    //Удаление страницы
     public function deletePage($id)
     {
         if (empty($id))

@@ -5,122 +5,133 @@
 <div class="col-12">
     <p class="display-4 text-center">Корзина</p>
 </div>
-<div id="accordion" role="tablist" aria-multiselectable="true">
-    <div class="card">
-        <div class="card-header" role="tab" id="headingOne">
-            <h5 class="mb-0">
-                <button type="button" class="btn btn-outline-info" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Товары
-                </button>
-            </h5>
-        </div>
-        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-            {% for product in products %}
-            <div class="card-block">
-                <div class="card">
-                    <div class="card-block col-12 row align-items-center">
-                        <div class="col-2">
-                            <a href="/{{product.url}}">
-                                <img src="../../upload/{{ product.image }}" alt="{{ product.name }}" title="{{ product.name }}" style="width: 35%">
-                            </a>
-                        </div>
-                        <div class="col-4 text-left">{{ product.name }}</div>
-                        <div class="col-1">{{ product.amount }} шт.</div>
-                        <div class="col-1"><strong>X</strong></div>
-                        <div class="col-2">{{ product.price * product.amount }} грн.</div>
-                        <div class="col-2">
-                            <form action="" method="post">
-                                <input type="hidden" name="id" value="{{ product.id }}">
-                                <input type="submit" class="btn btn-outline-danger" value="Удалить">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            <div class="card-block">
-                <div class="card">
-                    <div class="card-block col-12 row">
-                        <div class="col-6">СУММА</div>
-                        <div class="col-6">
-                            <form action="" method="post">
-                                <input type="submit" name="clear-basket" class="btn btn-danger w-100" value="Очистить корзину">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header" role="tab" id="headingTwo">
-            <h5 class="mb-0">
-                <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Личная информация
-                </button>
-            </h5>
-        </div>
-        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-            <div class="card-block">
-                <div class="card">
-                    <div class="card-block">
-                        <form action="" method="post">
-                                <div class="form-group">
-                                    <!--Имя-->
-                                    <label for="orderName">Имя</label>
-                                    <input type="text" class="form-control form-control-sm" name="user_name" id="orderName">
-                                    <!--Фамилия-->
-                                    <!--<label for="orderLastName">Фамилия</label>
-                                    <input type="text" class="form-control form-control-sm" name="user_lastname" id="orderLastName">-->
-                                    <!--Телефон-->
-                                    <label for="orderPhone">Телефон</label>
-                                    <input type="phone" class="form-control form-control-sm" name="name" id="orderPhone">
-                                    <!--Email-->
-                                    <label for="orderEmail">Email</label>
-                                    <input type="email" class="form-control form-control-sm" name="user_email" id="orderEmail">
-                                    <!--Город-->
-                                    <label for="orderAddress">Город</label>
-                                    <input type="text" class="form-control form-control-sm" name="user_address" id="orderAddress">
-                                    <!--Комментарий к заказу-->
-                                    <label for="orderComment">Комментарий к заказу</label>
-                                    <textarea class="form-control" id="orderComment" name="user_comment" rows="2"></textarea>
-                                    <p>mum  достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором.
-                                        Он использует словарь из более
-                                        чем 200 латинских слов, а также набор моделей предложений. В резу
-                                        льтате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет по
-                                        вторяющихся абзацей или "невозможных" слов.</p>
-                                </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header" role="tab" id="headingThree">
-            <h5 class="mb-0">
-                <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Доставка и оплата
-                </button>
-            </h5>
-        </div>
-        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-            <div class="card-block">
-                <button class="btn btn-outline-primary w-100">ОФОРМИТЬ</button>
-            </div>
-        </div>
-    </div>
-</div>
-{% else %}
-<div class="p-2">
-</div>
-<div class="card text-center h-100">
-    <div class="card-block">
-        <h1 class="card-title display-1">Корзина пуста =(</h1>
-        <h2 class="card-subtitle text-muted">Друг, выбери себе что-то из каталога товаров</h2>
-        <a href="/products/" class="card-link">Перейти на страницу товаров</a>
-    </div>
-</div>
-{% endif %}
+<form action="" method="post">
 
+    <div id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                    <button type="button" class="btn btn-outline-info" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Товары
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                {% for product in products %}
+                <div class="card-block">
+                    <div class="card">
+                        <div class="card-block col-12 row align-items-center">
+                            <div class="col-2">
+                                <a href="/products/{{ product.url }}">
+                                    <img src="../../upload/{{ product.image }}" alt="{{ product.name }}" title="{{ product.name }}" style="width: 35%">
+                                </a>
+                            </div>
+                            <div class="col-4 text-left"><a href="/products/{{ product.url }}">{{ product.name|slice(0,20) }}</a></div>
+                            <div class="col-1">{{ product.amount }} шт.</div>
+                            <div class="col-1"><strong>X</strong></div>
+                            <div class="col-2">{{ product.price * product.amount }} грн.</div>
+                            <div class="col-2">
+                                <input type="hidden" name="id" value="{{ product.id }}">
+                                <input type="submit" name="clear-basket" class="btn btn-outline-danger" value="Удалить">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="card-block">
+                    <div class="card">
+                        <div class="card-block col-12 row">
+                            <div class="col-6"><p class="h3">Сумма заказа: <strong>{{ total_price }} грн.</strong></p></div>
+                            <div class="col-6">
+                                <input type="submit" name="all-clear-basket" class="btn btn-danger w-100" value="Очистить корзину">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Личная информация
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="card-block">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="form-group"> <!--УБРАТЬ VALUE-->
+                                <!--Имя-->
+                                <label for="orderName">Имя</label>
+                                <input  value="{{ random(['Андрей','Сергей','Василий','Даша','Анастасия','Инна']) }}" type="text" class="form-control form-control-sm" name="user_name" id="orderName">
+                                <!--Фамилия-->
+                                <!--<label for="orderLastName">Фамилия</label>
+                                <input type="text" class="form-control form-control-sm" name="user_lastname" id="orderLastName">-->
+                                <!--Телефон-->
+                                <label for="orderPhone">Телефон</label>
+                                <input value="380671{{ random(200000) }}" type="phone" class="form-control form-control-sm" name="user_phone" id="orderPhone">
+                                <!--Email-->
+                                <label for="orderEmail">Email</label>
+                                <input value="test{{ random(2000) }}@test.com" type="email" class="form-control form-control-sm" name="user_email" id="orderEmail">
+                                <!--Город-->            <!--Сделать SELECT-->
+                                <label for="orderAddress">Город</label>
+                                <input value="{{ random(['Днепр','Львов','Киев','Сумы','Полтава']) }}" type="text" class="form-control form-control-sm" name="user_address" id="orderAddress">
+                                <!--Комментарий к заказу-->
+                                <label for="orderComment">Комментарий к заказу</label>
+                                <textarea class="form-control" id="orderComment" name="user_comment" rows="2">Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором.</textarea>
+                                <!--Подсказка-->
+                                <p>Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором.</p>
+                            </div>
+                        </div>
+                        <div class="card-block">
+                            <input type="submit" name="add-order" class="btn btn-outline-primary w-100" value="ОФОРМИТЬ ЗАКАЗ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Временно отказался-->
+
+        <!--<div class="card">
+            <div class="card-header" role="tab" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Доставка и оплата
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="card-block">
+                    <input type="submit" name="add-order" class="btn btn-outline-primary w-100" value="ОФОРМИТЬ ЗАКАЗ">
+                </div>
+            </div>
+        </div>-->
+    </div>
+    {% else %}
+    {% if order_id %}
+    <div class="p-2">
+    </div>
+    <div class="card text-center h-100">
+        <div class="card-block">
+            <h1 class="card-title display-1">Ваш номер заказа: <strong>№{{ order_id }}</strong></h1>
+            <h2 class="card-subtitle text-muted">Спасибо, что выбрали наш интернет-магазин ;)</h2>
+            <a href="/" class="card-link">Перейти на главную страницу</a>
+        </div>
+    </div>
+    {% else %}
+    <div class="p-2">
+    </div>
+    <div class="card text-center h-100">
+        <div class="card-block">
+            <h1 class="card-title display-1">Корзина пуста =(</h1>
+            <h2 class="card-subtitle text-muted">Друг, выбери себе что-то из каталога товаров</h2>
+            <a href="/products/" class="card-link">Перейти на страницу товаров</a>
+        </div>
+    </div>
+    {% endif %}
+    {% endif %}
+</form>
 {% endblock %}

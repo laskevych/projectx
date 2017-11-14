@@ -12,7 +12,7 @@ class PageAdmin extends CoreAdmin
         if ($uri['query'])
         {
             $id = explode('=',$uri['query']);
-            $page = $pages->getPage($id[1]);
+            $page = $pages->getPage($id[1],'id');
         }
         if ($request->method() == 'POST' && $_POST['title'] != null)
         {
@@ -37,8 +37,7 @@ class PageAdmin extends CoreAdmin
                 //Добавление страницы
                 $id = $pages->addpage($page);
             }
-            $page = $pages->getpage($id);
-            //print_r($page);
+            $page = $pages->getpage($id,'id');
         }
 
         $arr = array(

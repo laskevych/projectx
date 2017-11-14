@@ -1,6 +1,8 @@
 <?php
+
 class Products extends Database
 {
+    //Добавление товара
     public function addProduct($product)
     {
         if (empty($product)) {
@@ -20,13 +22,17 @@ class Products extends Database
         }
     }
 
+    //Получение товара по ссылке для клиентской части и по id для админ панели.
     public function getProduct($var, $type)
     {
         if ($type == 'id')
         {
-            if (empty($var)) {
+            if (empty($var))
+            {
                 return false;
-            } else {
+            }
+            else
+            {
                 $query = "SELECT id,name,description,url,visible,image,price FROM products WHERE id = $var LIMIT 1 ";
                 $this->query($query);
                 return $this->result();
@@ -46,10 +52,9 @@ class Products extends Database
                 return $this->result();
             }
         }
-
     }
 
-    //Отображение товаров. Три режима отображения. Вывод по ID.
+    //Получение товаров. Вывод по "Видимости" и по ID.
     public function getProducts($visible = null, $id = null)
     {
         if (empty($id))
@@ -85,6 +90,7 @@ class Products extends Database
         }
     }
 
+    //Обновление товара
     public function updateProduct($id, $product)
     {
         if (empty($id)) {
@@ -101,6 +107,7 @@ class Products extends Database
         }
     }
 
+    //Удаление товара
     public function deleteProduct($id)
     {
         if (empty($id))

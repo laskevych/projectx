@@ -5,7 +5,6 @@ class OrdersAdmin extends CoreAdmin
     public function fetch()
     {
         $orders = new Orders();
-        $request = new Request();
 
         $uri = parse_url($_SERVER['REQUEST_URI']);
 
@@ -20,8 +19,8 @@ class OrdersAdmin extends CoreAdmin
         }
         $arr = array(
             'orders' => $orders_catalog,
+            'status' => $status[1],
         );
-        print_r($arr);
         return $this->view->render('admin_orders.html', $arr);
     }
 }
