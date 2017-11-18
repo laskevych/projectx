@@ -16,18 +16,35 @@ class CoreAdmin
             'auto_reload' => true
         ));
 
-        $twig->addFunction('viewTree', new Twig_Function_Function('viewTree'));
-        function viewTree($categories)
+        $twig->addFunction('viewTreeRadio', new Twig_Function_Function('viewTreeRadio'));
+
+        function viewTreeRadio($categories)
+        {
+            if ($categories)
+            {
+                echo "<ul class='list-group'>";
+                foreach ($categories as $category)
+                {
+                    echo "<li class='list-group-item'><label class=\"custom-control custom-radio\"><input class=\"custom-control-input\" type=\"radio\" name=\"parent_id\" value=".$category['id']." autocomplete=\"off\"><span class=\"custom-control-indicator\"></span><span class=\"custom-control-description\">".$category['name']."</span></label></li>";
+                    if (isset($category['subcategories']))
+                    {
+                        viewTreeRadio($category['subcategories']);
+                    }
+                }
+                echo "</ul>";
+            }
+        }
+        $twig->addFunction('viewTreeList', new Twig_Function_Function('viewTreeList'));
+
+        function viewTreeList($categories)
         {
             if ($categories)
             {
                 echo "<ol>";
-                foreach ($categories as $category)
-                {
-                    echo "<li>".$category['name']."</li>";
-                    if (isset($category['subcategories']))
-                    {
-                        viewTree($category['subcategories']);
+                foreach ($categories as $category) {
+                    echo "<li>" . $category['name'] . "</li>";
+                    if (isset($category['subcategories'])) {
+                        viewTreeList($category['subcategories']);
                     }
                 }
                 echo "</ol>";
@@ -67,22 +84,5 @@ class CoreAdmin
             }
         }
         return $results;
-    }
-
-    static public function viewTree($categories)
-    {
-        if ($categories)
-        {
-            echo "<ol>";
-            foreach ($categories as $category)
-            {
-                echo "<label class=\"btn btn-primary\"><input type=\"radio\"><li>".$category['name']."</li></label>";
-                if (isset($category['subcategories']))
-                {
-                    //viewTree($category['subcategories']);
-                }
-            }
-            echo "</ol>";
-        }
     }
 }

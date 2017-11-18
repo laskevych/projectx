@@ -18,19 +18,7 @@
         </div>
         <div class="card-block text-left">
             <h4 class="card-title display-7">Список категорий</h4>
-            {{ viewTree(categories) }}
-            <!--<ol>
-                {# {% for category in categories %}
-                <li>{{ category.name }}</li>
-                {% if category.subcategories %}
-                <ol>
-                {% for subcategory in category.subcategories %}
-                <li>{{ subcategory.name }}</li>
-                {% endfor %}
-                    </ol>
-                {% endif %}
-                {% endfor %} #}
-            </ol>-->
+            {{ viewTreeList(categories) }}
         </div>
     </div>
 </div>

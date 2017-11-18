@@ -95,8 +95,8 @@
                         <small id="product-image-help" class="form-text text-muted">Загружайте изображение в формате .png и .jpg. Размер до 2 МБ</small>
                         {% else %}
                         <p class="card-text">Изображение товара</p>
-                        <img src="../../../upload/{{ product.image }}" width="30%">
-                        <input type="file" class="form-control-file" name="image" id="product-image" aria-describedby="product-image-help">
+                        <img src="/upload/{{ product.image }}" width="30%">
+                        <input value="{{ product.image }}" type="file" class="form-control-file" name="image" id="product-image" aria-describedby="product-image-help">
                         <small id="product-image-help" class="form-text text-muted">Загружайте изображение в формате .png и .jpg. Размер до 2 МБ</small>
                         {% endif %}
                     </div>

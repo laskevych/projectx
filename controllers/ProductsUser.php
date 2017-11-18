@@ -45,9 +45,12 @@ class ProductsUser extends Core
         }
         else
         {
+            $categories = new Categories();
+            $categories_catalog = $this->makeTree( $categories->getCategories());
             $products_catalog = $products->getProducts('active');
             $arr = array(
                 'products' => $products_catalog,
+                'categories' => $categories_catalog,
             );
 
             return $this->view->render('products.html', $arr);

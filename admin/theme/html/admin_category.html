@@ -1,7 +1,6 @@
 {% extends "index.html" %}
 {% block title %}Добавить категорию{% endblock %}
 {% block content %}
-<!--<div class="col-12">-->
 <div class="card text-center">
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
@@ -17,7 +16,6 @@
         </ul>
     </div>
     <form method="post" enctype="multipart/form-data">
-        <!--<input type="hidden" name="id" value="{{ product.id }}">-->
         <div class="row">
             <div class="card-block col-7 text-left">
                 <!--Название-->
@@ -28,48 +26,33 @@
                 <!--Ссылка и Видимость-->
                 <div class="form-inline text-center">
                     <label for="category-url" class="col-2">Ссылка</label>
-                    <!--<span class="badge badge-default col-2">Ссылка</span>-->
                     <input class="form-control form-control-sm col-4" type="text" name="url" id="category-url">
                     <label for="category-visible" class="col-2">Видимость</label>
                     <div class="btn-group col-4" data-toggle="buttons" id="category-visible">
-                        <label class="btn btn-outline-primary btn-sm">
+                        <label class="btn btn-outline-info btn-sm active">
                             <input type="radio" name="visible" autocomplete="off" value="1">On
                         </label>
-                        <label class="btn btn-outline-primary active btn-sm">
+                        <label class="btn btn-outline-info btn-sm">
                             <input type="radio" name="visible" autocomplete="off" value="0">Off
                         </label>
                     </div>
+                </div>
+                <!--Добавить-->
+                <div class="form-group p-2">
+                    <input type="submit" class="btn btn-success col-12" value="Добавить">
                 </div>
             </div>
             <!--Выбор подкатегории-->
             <div class="card-block col-5">
                 <div class="custom-controls-stacked">
-                    <label>Подкатегории</label>
-                    <label class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" name="parent_id" value="0" autocomplete="off" checked>
-                        <span class="custom-control-indicator"></span>
-                        <span class="custom-control-description">Главное дерево</span>
-                    </label>
-                    {% for category in categories %}
-                    <label class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" name="parent_id" value="{{ category.id }}" autocomplete="off">
-                        <span class="custom-control-indicator"></span>
-                        <span class="custom-control-description">{{ category.name }}</span>
-                    </label>
-                    {% if category.subcategories %}
-                    {% for subcategory in category.subcategories %}
-                    <label class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" name="parent_id" value="{{ subcategory.id }}" autocomplete="off">
-                        <span class="custom-control-indicator"></span>
-                        <span class="custom-control-description">{{ subcategory.name }}</span>
-                    </label>
-                    {% endfor %}
-                    {% endif %}
-                    {% endfor %}
+                    <label>Категории</label>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <label class="custom-control custom-radio"><input class="custom-control-input" type="radio" name="parent_id" value="0" autocomplete="off" checked><span class="custom-control-indicator"></span><span class="custom-control-description">Главное дерево</span></label>
+                        </li>
+                    </ul>
+                    {{ viewTreeRadio(categories) }}
                 </div>
-            </div>
-            <div class="card-block col-12">
-                <input type="submit" class="btn btn-success col-12" value="Добавить">
             </div>
         </div>
     </form>

@@ -18,7 +18,7 @@ class Main extends Core
             'categories' => $categories_catalog,
         );
 
-
+        //print_r($arr);
 		return $this->view->render('main.html', $arr);
 	}
 }

@@ -16,21 +16,22 @@ class Core
 		));
 
         $twig->addFunction('viewTree', new Twig_Function_Function('viewTree'));
+
         function viewTree($categories)
         {
+            echo "<div class='list-group w-100'>";
             if ($categories)
             {
-                echo "<ol>";
                 foreach ($categories as $category)
                 {
-                    echo "<li>".$category['name']."</li>";
+                    echo "<a href='#' class='list-group-item list-group-item-action'>".$category['name']."</a>";
                     if (isset($category['subcategories']))
                     {
                         viewTree($category['subcategories']);
                     }
                 }
-                echo "</ol>";
             }
+            echo "</div>";
         }
 
         $this->view = $twig;
